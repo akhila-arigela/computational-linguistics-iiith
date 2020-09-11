@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>day3-1 drop down</title>
+</head>
+<body>
+  <section id="experiment-article-section-4">
+
+        <!--<div class="icon" id="experiment-article-section-4-icon">
+	   Enclose the icon image of your lab.
+	  
+	</div>!-->
+
+    <div class="heading" id="experiment-article-section-4-heading">
+          Experiment
+        </div>
+
+    <div class="content" id="experiment-article-section-4-content">
+	     <div id="FORM_SENTENCES_2">
+
+
+
+
+
+          <div id="selectLanguage box" style="text-align:center">
+             <select name="lang" id="selectLanguage" onchange="procedeTo.getSelectedLang()">
+                <option value="null">---Select Language---</option>
+                <option value="english">English</option>
+                <option value="hindi" >Hindi</option>
+              </select>
+          </div>
+          <br>
+       <div align="center" id="words_sentence">
+
+          <style type="text/css">
+             .spmHandler {
+              background: transparent;
+              padding: 5px;
+              border: 0px ;
+                }
+          </style>
+
+
+
+
+
+           <div  class="s1" style="color:#0000AA;font-size:16px;display:none;" ><br><br><b>Form a  sentence (Declarative or Interrogative or any other type) from the given words</b></div>
+
+
+           <div  class="s1" style="display:none;color:#0000FF;font-size:14px;" ><i>(select the buttons in proper order) </i><br><br>
+
+                </div>
+       </div>
+     </div>
+   </div>
+ </section>
+</body>
+<script type="text/javascript">
+   var procedeTo = {
+
+
+  getSelectedLang: function(){
+       var listOfLang = document.getElementById('selectLanguage');
+       var selectedLang = listOfLang.options[listOfLang.selectedIndex].value;
+       console.log(selectedLang);
+       if(selectedLang=="english"){
+            document.getElementsByClassName("s1")[0].style.display="block";
+            document.getElementsByClassName("s1")[1].style.display="block";};
+        if(selectedLang=="hindi"){
+            document.getElementsByClassName("s1")[0].style.display="block";
+            document.getElementsByClassName("s1")[1].style.display="block";}
+          }
+        }
+
+
+ </script>
+</html>
