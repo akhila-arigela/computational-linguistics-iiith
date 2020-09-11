@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>day3</title>
+</head>
+<body>
+  <section id="experiment-article-section-4">
+
+        <div class="icon" id="experiment-article-section-4-icon">
+	  <!-- Enclose the icon image of your lab.-->
+	  
+	</div>
+
+        <div class="heading" id="experiment-article-section-4-heading">
+          Experiment
+        </div>
+
+        <div class="content" id="experiment-article-section-4-content">
+	<div id="FORM_SENTENCES_2">
+
+
+
+
+
+    <div id="selectLanguage box" style="text-align:center">
+        <select name="lang" id="selectLanguage" onchange="procedeTo.getSelectedLang()">
+             <option value="null">---Select Language---</option>
+             <option value="english">English</option>
+             <option value="hindi" >Hindi</option>
+        </select>
+    </div>
+<br>
+    <div align="center" id="words_sentence">
+
+       <style type="text/css">
+          .spmHandler {
+              background: transparent;
+              padding: 5px;
+              border: 0px ;
+              }
+        </style>
+
+
+
+
+
+    <div  class="s1" style="color:#0000AA;font-size:16px;display:none;" ><br><br><b>Form a  sentence (Declarative or Interrogative or any other type) from the given words</b></div>
+
+
+    <div  class="s1" style="display:none;color:#0000FF;font-size:14px;" ><i>(select the buttons in proper order) </i><br><br>
+
+    </div>
+  <div id="btnarea" style="display:none">
+    <div id="english btns" style = "display :none" >
+       <div id="egbtn1" style="display:none" class="egbtns">
+            <button onclick="engcorrectAns.validate()" class="engbtn" value="">Before</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <button onclick="" class="engbtn" value="">ate</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <button onclick="" class="engbtn" value="">afternoon</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <button onclick="" value="">apple</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <button onclick="" value="">an</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <button onclick="" value="">John</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <br><br><br><br>
+       </div>
+
+       	<div id="egbtn2" style="display:none" class="egbtns">
+             <button onclick="engcorrectAns.validate()" class="engbtn" value="">students</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="" class="engbtn" value="">to</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="" class="engbtn" value="">like</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="" value="">the</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="" value="">night</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="" value="">some</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="" value="">study</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="" value="">in</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+             <br><br><br><br>
+       </div>
+
+       	<div id="egbtn3" style="display:none" class="egbtns">
+            <button onclick="engcorrectAns.validate()" class="engbtn" value="church">church</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <button onclick="" class="engbtn" value="to">to</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <button onclick="" class="engbtn" value="John">John</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <button onclick="" value="went">went</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <button onclick="" value="Mary">Mary</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <button onclick="" value="and">and</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <br><br><br><br>
+       </div>
+
+       	<div id="egbtn4" style="display:none" class="egbtns">
+             <button onclick="engcorrectAns.validate()" class="engbtn" value="church">church</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="" class="engbtn" value="went">went</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="" class="engbtn" value="after">after</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="" value="eating">eating</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="" value="to">to</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="" value="John">John</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+             <br><br><br><br>
+       </div>
+
+       	<div id="egbtn5" style="display:none" class="egbtns">
+             <button onclick="" class="engbtn" value="">did</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="" class="engbtn" value="">to</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="" class="engbtn" value="">go</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="" value="">he</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="" value="">market</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <br><br><br><br>
+       </div>
+       <div id="egbtn6" style="display:none" class="egbtns">
+             <button onclick="" class="engbtn" value="">called</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="" class="engbtn" value="">sells</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="" class="engbtn" value="">my</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="" value="">cosmetics</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="" value="">sister</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="" value="">women</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="" value="">who</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="" value="">the</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+             <br><br><br><br>
+       </div>
+       <div id="egbtn7" style="display:none" class="egbtns">
+             <button onclick="engcorrectAns.validate()" class="engbtn" value="">goes</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="" class="engbtn" value="">and</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="" class="engbtn" value="">to</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="" value="">studies</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="" value="">the</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="" value="">John</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="" valu="">library</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+             <br><br><br><br>
+       </div>
+       <div id="egbtn8" style="display:none" class="egbtns">
+             <button onclick="engcorrectAns.validate()" class="engbtn">she</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="" class="engbtn" value="">ate</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="" class="engbtn" value="">so</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="" value="">apple</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="" value="">an</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="" value="">John</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="" value="">did</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+             <br><br><br><br>
+       </div>
+       <div id="egbtn9" style="display:none" class="egbtns">
+             <button onclick="engcorrectAns.validate()" class="engbtn" value="">noticed</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="" class="engbtn" value="">book</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="" class="engbtn" value="">after</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="" value="">returned</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="" value="">she</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="" value="">error</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="" value="">teacher</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="" value="">the</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="" value="">the</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="" value="">the</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+             <br><br><br><br>
+       </div>
+       <div id="egbtn10" style="display:none" class="egbtns">
+             <button onclick="engcorrectAns.validate()" class="engbtn" value="">told</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="" class="engbtn" value="">book</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="" class="engbtn" value="">yesterday</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="" value="">I</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="" value="">her</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="" value="">I</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="" value="">that</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="" value="">a</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="" value="">bought</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <br><br><br><br>
+       </div>
+    </div>
+
+    <div id="hindi btns" style = "display :none" >
+         <div id="hibtn1" style="display:none" class="hibts">
+            <button onclick="engcorrectAns.validate()" class="engbtn" value="गयें">गयें</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <button onclick="" class="engbtn" value="बाजार">बाजार</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <button onclick="" class="engbtn" value="श्याम">श्याम</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <button onclick="" value="और">और</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <button onclick="" value="राम">राम</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            
+            <br><br><br><br>
+       </div>
+
+       	<div id="hibtn2" style="display:none" class="hibts">
+             <button onclick="engcorrectAns.validate()" class="engbtn" value="भी">भी</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="" class="engbtn" value="श्याम">श्याम</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="" class="engbtn" value="और">और</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="" value="सोया">सोया</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="" value="राम">राम</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <br><br><br><br>
+       </div>
+
+       	<div id="hibtn3" style="display:none" class="hibts">
+            <button onclick="engcorrectAns.validate()" class="" value="है">है</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <button onclick="" class="engbtn" value="रहा">रहा</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <button onclick="" class="engbtn" value="सो">सो</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <button onclick="" value="राम">राम</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <button onclick="" value="कि">कि</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <button onclick="" value="बताया">बताया</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <button onclick="" value="उसे">उसे</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <button onclick="" value="मैंने">मैंने</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <br><br><br><br>
+       </div>
+
+       	<div id="hibtn4" style="display:none" class="hibts">
+             <button onclick="engcorrectAns.validate()" class="" value="सोया">सोया</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="" class="engbtn" value="खाकर">खाकर</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="" class="engbtn" value="राम">राम</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             
+             <br><br><br><br>
+       </div>
+
+       	<div id="hibtn5" style="display:none" class="hibts">
+             <button onclick="engcorrectAns.validate()" class="" value="गया">गया</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="" class="engbtn" value="सो">सो</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="" class="engbtn" value="कुत्ता">कुत्ता</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="" value="मारकर">मारकर</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="" value="को">को</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="" value="बिल्लियों">बिल्लियों</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <br><br><br><br>
+       </div>
+       <div id="hibtn6" style="display:none" class="hibts" >
+             <button onclick="engcorrectAns.validate()" class="engbtn" value="वहाँ">वहाँ</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="" class="engbtn" value="है">है</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="" class="engbtn" value="किताब">किताब</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="" value="लाल">लाल</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="" value="एक">एक</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <br><br><br><br>
+       </div>
+       <div id="hibtn7" style="display:none" class="hibts">
+             <button onclick="engcorrectAns.validate()" class="engbtn" value="है">है</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="" class="engbtn" value="वहाँ">वहाँ</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="" class="engbtn" value="किताब">किताब</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="" value="सी">सी</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="" value="बड़ी">बड़ी</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="" value="एक">एक</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             
+             <br><br><br><br>
+       </div>
+
+    </div>
+</div>
+   <div style="color:#0000AA; display :none" ><b>Formed Sentence</b> (<i style="color:#0000FF;display :none">after selecting words</i>): </div>
+    
+    <P id="" style="font-size:30px;display :none"><b></b></P>
+    <br>
+    <br>
+    <button onclick="" style="display :none">Re-form the sentence</button>
+    <br>
+    <br>
+    <button onclick="" style="display :none">Check the correctness of this sentence</button>
+    <br>
+    <br>
+    <p id="right_wrong" style="text-align:center;font-size:30px;color:#FF0000;display :none">Wrong answer!!!<b style="font-size:30px">students</b></p>
+    <br>
+    <br>
+    <div id="get_hide" style="display :none"><button onclick="getAnswer('some-students-like-to-study-in-the-night_at-night-some-students-like-to-study_');">Get Answers</button></div>
+    <div align="center" id="answer" style = "display :none"></div>
+
+
+   </div>
+
+
+       </div>
+        </div>
+
+</section>
+</body>
+<script type="text/javascript">
+	
+
+ var procedeTo = {
+
+
+ 	getSelectedLang: function(){
+		   var listOfLang = document.getElementById('selectLanguage');
+		   var selectedLang = listOfLang.options[listOfLang.selectedIndex].value;
+		   console.log(selectedLang);
+		   var engl1=["egbtn1","egbtn2","egbtn3","egbtn4","egbtn5","egbtn6","egbtn7","egbtn8","egbtn9","egbtn10"];
+		   var hil1=["hibtn1","hibtn2","hibtn3","hibtn4","hibtn5","hibtn6","hibtn7"];
+		   document.getElementById("hindi btns").style.display="none";
+           document.getElementById("english btns").style.display="none";
+           for(let i=0;i<10;i++){
+           document.getElementsByClassName("egbtns")[i].style.display="none";};
+           for(let i=0;i<7;i++){
+           document.getElementsByClassName("hibts")[i].style.display="none";};
+		   if(selectedLang=="english"){
+			      document.getElementsByClassName("s1")[0].style.display="block";
+			      document.getElementsByClassName("s1")[1].style.display="block";
+			      document.getElementById("btnarea").style.display="block";
+			      document.getElementById("hindi btns").style.display="none";
+                  document.getElementById("english btns").style.display="block";
+                  document.getElementById(engl1[this.getRandengdiv(0,9)]).style.display="block";
+		           }
+		    else if(selectedLang=="hindi"){  
+		    	   document.getElementsByClassName("s1")[0].style.display="block";
+			       document.getElementsByClassName("s1")[1].style.display="block";
+			       document.getElementById("btnarea").style.display="block";
+			       document.getElementById("english btns").style.display="none";
+			       document.getElementById("hindi btns").style.display="block";
+			       document.getElementById(hil1[this.getRandengdiv(0,6)]).style.display="block";
+		           } 
+		           else{
+		           	alert('select a language');
+		           }
+
+		       },
+
+    getRandengdiv : function(min,max){
+        
+          return(Math.floor(Math.random() * (max - min) + min));
+        console.log(Math.floor(Math.random() * (max - min) + min));
+        
+
+           }
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+    } 
+
+
+
+	
+    
+
+
+
+	/*enableButton: function(buttonId) {
+		   document.getElementById(buttonId).disabled = false},*/
+
+
+	/*activateEvents: function() {
+		this.addClickEvent('btnNext', function() { view.nextBtn() })
+		this.addClickEvent('optionFor', function() { view.clearExecutionSection() })
+		this.addClickEvent('optionWhile', function() { view.clearExecutionSection() })
+		this.addClickEvent('optionDoWhile', function() { view.clearExecutionSection() })
+		this.addClickEvent('btnStart', function() { view.startBtn() })
+		
+	},*/
+	/*const engcorrectAns={
+		1: ["John ate an apple before afternoon","before afternoon John ate an apple","John before afternoon ate an apple"],
+		2: ["some students like to study in the night","at night some students like to study"],
+		3: ["John and Mary went to church","Mary and John went to church"],
+		4: ["John went to church after eating","after eating John went to church","John after eating went to church"],
+		5: ["did he go to market","he did go to market"],
+		6: ["the woman who called my sister sells cosmetics","the woman who sells cosmetics called my sister","my sister who sells cosmetics called the woman","my sister who called the woman sells cosmetics"],
+		7: ["John goes to the library and studies","John studies and goes to the library"],
+		8: ["John ate an apple so did she","she ate an apple so did John"],
+		9: ["the teacher returned the book after she noticed the error","the teacher noticed the error after she returned the book","after the teacher returned the book she noticed the error","after the teacher noticed the error she returned the book","she returned the book after the teacher noticed the error","she noticed the error after the teacher returned the book","after she returned the book the teacher noticed the error","after she noticed the error the teacher returned the book"],
+		10: ["I told her that I bought a book yesterday","I told her yesterday that I bought a book","yesterday I told her that I bought a book","I bought a book that I told her yesterday","I bought a book yesterday that I told her","yesterday I bought a book that I told her"],
+        
+        
+		validate:function(){
+			
+			for(var i=1;i<=10;i++){
+			   
+			   
+				
+				for(var j=0;j<=this[i].length-1;j++){
+
+					if("John ate an apple so did she"==this[i][j]){
+						console.log(true)
+					      }
+				}
+			}
+		}
+	}
+	const hincorrectAns={
+		1: ["राम और श्याम बाजार गयें","राम और श्याम गयें बाजार","बाजार गयें राम और श्याम","गयें बाजार राम और श्याम"],
+		2: ["राम सोया और श्याम भी","श्याम सोया और राम भी","सोया श्याम और राम भी","सोया राम और श्याम भी"],
+		3: ["मैंने उसे बताया कि राम सो रहा है","मैंने उसे बताया कि सो रहा है राम","उसे मैंने बताया कि राम सो रहा है","उसे मैंने बताया कि सो रहा है राम","मैंने बताया उसे कि राम सो रहा है","मैंने बताया उसे कि सो रहा है राम","उसे बताया मैंने कि राम सो रहा है","उसे बताया मैंने कि सो रहा है राम","बताया मैंने उसे कि राम सो रहा है","बताया मैंने उसे कि सो रहा है राम","","बताया उसे मैंने कि राम सो रहा है","बताया उसे मैंने कि सो रहा है राम"],
+		4: ["राम खाकर सोया","खाकर राम सोया","राम सोया खाकर","खाकर सोया राम","सोया राम खाकर","सोया खाकर राम"],
+		5: ["बिल्लियों को मारकर कुत्ता सो गया","मारकर बिल्लियों को कुत्ता सो गया","बिल्लियों को मारकर सो गया कुत्ता","मारकर बिल्लियों को सो गया कुत्ता","कुत्ता सो गया बिल्लियों को मारकर","कुत्ता सो गया मारकर बिल्लियों को","सो गया कुत्ता बिल्लियों को मारकर","सो गया कुत्ता मारकर बिल्लियों को"],
+		6: ["एक लाल किताब वहाँ है","एक लाल किताब है वहाँ","वहाँ है एक लाल किताब","है वहाँ एक लाल किताब"],
+		7: ["एक बड़ी सी किताब वहाँ है","एक बड़ी सी किताब है वहाँ","बड़ी सी एक किताब वहाँ है","बड़ी सी एक किताब है वहाँ","वहाँ है एक बड़ी सी किताब","वहाँ है बड़ी सी एक किताब","है वहाँ एक बड़ी सी किताब","है वहाँ बड़ी सी एक किताब"],
+		
+        
+        
+		validate:function(){
+			
+			for(var i=1;i<=7;i++){
+			   
+			   
+				for(var j=0;j<=this[i].length-1;j++){
+
+					if("John ate an apple so did she"==this[i][j]){
+						console.log(true)
+					      }
+				}
+			}
+		}
+	}	 
+	 
+  */
+
+		
+
+
+
+
+
+
+   	
+
+
+
+ 
+ </script>
+</html>
