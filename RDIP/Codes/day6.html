@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>day4</title>
+</head>
+<body>
+  <section id="experiment-article-section-4">
+
+        <div class="icon" id="experiment-article-section-4-icon">
+	  <!-- Enclose the icon image of your lab.-->
+	  
+	</div>
+
+        <div class="heading" id="experiment-article-section-4-heading">
+          Experiment
+        </div>
+
+        <div class="content" id="experiment-article-section-4-content">
+	<div id="FORM_SENTENCES_2">
+
+
+
+
+
+    <div id="selectLanguage box" style="text-align:center">
+        <select name="lang" id="selectLanguage" onchange="procedeTo.getSelectedLang()">
+             <option value="null">---Select Language---</option>
+             <option value="english">English</option>
+             <option value="hindi" >Hindi</option>
+        </select>
+    </div>
+<br>
+    <div align="center" id="words_sentence">
+
+       <style type="text/css">
+          .spmHandler {
+              background: transparent;
+              padding: 5px;
+              border: 0px ;
+              }
+        </style>
+
+
+
+
+
+    <div  class="s1" style="color:#0000AA;font-size:16px;display:none;" ><br><br><b>Form a  sentence (Declarative or Interrogative or any other type) from the given words</b></div>
+
+
+    <div  class="s1" style="display:none;color:#0000FF;font-size:14px;" ><i>(select the buttons in proper order) </i><br><br>
+
+    </div>
+  <div id="btnarea" style="display:none">
+    <div id="english btns" style = "display :none" >
+       <div id="egbtn1" style="display:none" class="egbtns">
+            <button onclick="procedeTo.ipbtnclk('before','engbtn1-1',6)" id="engbtn1-1" style="display:inline-block;" class="allengbtns">before</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <button onclick="procedeTo.ipbtnclk('ate','engbtn1-2',6)" id="engbtn1-2" style="display:inline-block;" class="allengbtns">ate</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <button onclick="procedeTo.ipbtnclk('afternoom','engbtn1-3',6)" style="display:inline-block;" id="engbtn1-3" class="allengbtns">afternoon</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <button onclick="procedeTo.ipbtnclk('apple','engbtn1-4',6)" style="display:inline-block;" id="engbtn1-4" class="allengbtns">apple</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <button onclick="procedeTo.ipbtnclk('an','engbtn1-5',6)" style="display:inline-block;" id="engbtn1-5" class="allengbtns">an</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <button onclick="procedeTo.ipbtnclk('John','engbtn1-6',6)" style="display:inline-block;" id="engbtn1-6" class="allengbtns">John</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <br><br><br><br>
+       </div>
+
+       	<div id="egbtn2" style="display:none" class="egbtns">
+             <button onclick="procedeTo.ipbtnclk('students','engbtn2-1',8)" id="engbtn2-1" style="display:inline-block;" class="allengbtns" >students</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="procedeTo.ipbtnclk('to','engbtn2-2',8)" id="engbtn2-2" style="display:inline-block;" class="allengbtns">to</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="procedeTo.ipbtnclk('like','engbtn2-3',8)" id="engbtn2-3" style="display:inline-block;" class="allengbtns">like</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="procedeTo.ipbtnclk('the','engbtn2-4',8)" id="engbtn2-4" style="display:inline-block;" class="allengbtns">the</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="procedeTo.ipbtnclk('night','engbtn2-5',8)" id="engbtn2-5" style="display:inline-block;" class="allengbtns">night</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="procedeTo.ipbtnclk('some','engbtn2-6',8)" id="engbtn2-6" style="display:inline-block;" class="allengbtns">some</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="procedeTo.ipbtnclk('study','engbtn2-7',8)" id="engbtn2-7" style="display:inline-block;" class="allengbtns">study</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="procedeTo.ipbtnclk('in','engbtn2-8',8)"  id="engbtn2-8" style="display:inline-block;" class="allengbtns">in</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+             <br><br><br><br>
+       </div>
+
+       	<div id="egbtn3" style="display:none" class="egbtns">
+            <button onclick="procedeTo.ipbtnclk('church','engbtn3-1',6)" id="engbtn3-1" style="display:inline-block;" class="allengbtns">church</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <button onclick="procedeTo.ipbtnclk('to','engbtn3-2',6)" id="engbtn3-2" style="display:inline-block;" class="allengbtns">to</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <button onclick="procedeTo.ipbtnclk('John','engbtn3-3',6)" id="engbtn3-3" style="display:inline-block;" class="allengbtns">John</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <button onclick="procedeTo.ipbtnclk('went','engbtn3-4',6)" id="engbtn3-4" style="display:inline-block;" class="allengbtns">went</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <button onclick="procedeTo.ipbtnclk('Mary','engbtn3-5',6)" id="engbtn3-5" style="display:inline-block;" class="allengbtns">Mary</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <button onclick="procedeTo.ipbtnclk('and','engbtn3-6',6)" id="engbtn3-6" style="display:inline-block;" class="allengbtns">and</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <br><br><br><br>
+       </div>
+
+       	<div id="egbtn4" style="display:none" class="egbtns">
+             <button onclick="procedeTo.ipbtnclk('went','engbtn4-1',6)" id="engbtn4-1"  style="display:inline-block;" class="allengbtns">went</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="procedeTo.ipbtnclk('church','engbtn4-2',6)" id="engbtn4-2"  style="display:inline-block;" class="allengbtns">church</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="procedeTo.ipbtnclk('after','engbtn4-3',6)" id="engbtn4-3"  style="display:inline-block;" class="allengbtns">after</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="procedeTo.ipbtnclk('eating','engbtn4-4',6)" id="engbtn4-4"  style="display:inline-block;" class="allengbtns">eating</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="procedeTo.ipbtnclk('to','engbtn4-5',6)" id="engbtn4-5"  style="display:inline-block;" class="allengbtns">to</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="procedeTo.ipbtnclk('John','engbtn4-6',6)" id="engbtn4-6"  style="display:inline-block;" class="allengbtns">John</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+             <br><br><br><br>
+       </div>
+
+       	<div id="egbtn5" style="display:none" class="egbtns">
+             <button onclick="procedeTo.ipbtnclk('did','engbtn5-1',5)" id="engbtn5-1" style="display:inline-block;" class="allengbtns">did</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="procedeTo.ipbtnclk('to','engbtn5-2',5)" id="engbtn5-2" style="display:inline-block;" class="allengbtns">to</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="procedeTo.ipbtnclk('go','engbtn5-3',5)" id="engbtn5-3" style="display:inline-block;" class="allengbtns">go</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="procedeTo.ipbtnclk('he','engbtn5-4',5)" id="engbtn5-4" style="display:inline-block;" class="allengbtns">he</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="procedeTo.ipbtnclk('market','engbtn5-5',5)" id="engbtn5-5" style="display:inline-block;" class="allengbtns">market</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <br><br><br><br>
+       </div>
+       <div id="egbtn6" style="display:none" class="egbtns">
+             <button onclick="procedeTo.ipbtnclk('called','engbtn6-1',8)" id="engbtn6-1" style="display:inline-block;" class="allengbtns">called</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="procedeTo.ipbtnclk('sells','engbtn6-2',8)" id="engbtn6-2"  style="display:inline-block;" class="allengbtns">sells</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="procedeTo.ipbtnclk('my','engbtn6-3',8)" id="engbtn6-3"  style="display:inline-block;" class="allengbtns">my</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="procedeTo.ipbtnclk('cosmetics','engbtn6-4',8)" id="engbtn6-4" style="display:inline-block;" class="allengbtns">cosmetics</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="procedeTo.ipbtnclk('sister','engbtn6-5',8)" id="engbtn6-5" style="display:inline-block;" class="allengbtns">sister</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="procedeTo.ipbtnclk('women','engbtn6-6',8)" id="engbtn6-6" style="display:inline-block;" class="allengbtns">women</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="procedeTo.ipbtnclk('who','engbtn6-7',8)" id="engbtn6-7" style="display:inline-block;" class="allengbtns">who</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="procedeTo.ipbtnclk('the','engbtn6-8',8)" id="engbtn6-8" style="display:inline-block;" class="allengbtns">the</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+             <br><br><br><br>
+       </div>
+       <div id="egbtn7" style="display:none" class="egbtns">
+             <button onclick="procedeTo.ipbtnclk('goes','engbtn7-1',7)" id="engbtn7-1"  style="display:inline-block;" class="allengbtns">goes</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="procedeTo.ipbtnclk('and','engbtn7-2',7)" id="engbtn7-2"  style="display:inline-block;" class="allengbtns">and</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="procedeTo.ipbtnclk('to','engbtn7-3',7)" id="engbtn7-3"  style="display:inline-block;" class="allengbtns">to</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="procedeTo.ipbtnclk('studies','engbtn7-4',7)" id="engbtn7-4" style="display:inline-block;" class="allengbtns">studies</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="procedeTo.ipbtnclk('the','engbtn7-5',7)" id="engbtn7-5" style="display:inline-block;" class="allengbtns">the</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="procedeTo.ipbtnclk('John','engbtn7-6',7)" id="engbtn7-6" style="display:inline-block;" class="allengbtns">John</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="procedeTo.ipbtnclk('library','engbtn7-7',7)" id="engbtn7-7" style="display:inline-block;" class="allengbtns">library</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+             <br><br><br><br>
+       </div>
+       <div id="egbtn8" style="display:none" class="egbtns">
+             <button onclick="procedeTo.ipbtnclk('she','engbtn8-1',7)" id="engbtn8-1"  style="display:inline-block;" class="allengbtns">she</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="procedeTo.ipbtnclk('ate','engbtn8-2',7)" id="engbtn8-2"  style="display:inline-block;" class="allengbtns">ate</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="procedeTo.ipbtnclk('so','engbtn8-3',7)" id="engbtn8-3"  style="display:inline-block;" class="allengbtns">so</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="procedeTo.ipbtnclk('apple','engbtn8-4',7)" id="engbtn8-4" style="display:inline-block;" class="allengbtns">apple</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="procedeTo.ipbtnclk('an','engbtn8-5',7)" id="engbtn8-5" style="display:inline-block;" class="allengbtns">an</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="procedeTo.ipbtnclk('John','engbtn8-6',7)" id="engbtn8-6" style="display:inline-block;" class="allengbtns">John</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="procedeTo.ipbtnclk('did','engbtn8-7',7)" id="engbtn8-7" style="display:inline-block;" class="allengbtns">did</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+             <br><br><br><br>
+       </div>
+       <div id="egbtn9" style="display:none" class="egbtns">
+             <button onclick="procedeTo.ipbtnclk('noticed','engbtn9-1',10)" id="engbtn9-1"  style="display:inline-block;" class="allengbtns">noticed</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="procedeTo.ipbtnclk('book','engbtn9-2',10)" id="engbtn9-2"  style="display:inline-block;" class="allengbtns">book</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="procedeTo.ipbtnclk('after','engbtn9-3',10)" id="engbtn9-3"  style="display:inline-block;" class="allengbtns">after</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="procedeTo.ipbtnclk('returned','engbtn9-4',10)" id="engbtn9-4" style="display:inline-block;" class="allengbtns">returned</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="procedeTo.ipbtnclk('she','engbtn9-5',10)" id="engbtn9-5" style="display:inline-block;" class="allengbtns">she</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="procedeTo.ipbtnclk('error','engbtn9-6',10)" id="engbtn9-6" style="display:inline-block;" class="allengbtns">error</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="procedeTo.ipbtnclk('teacher','engbtn9-7',10)" id="engbtn9-7" style="display:inline-block;" class="allengbtns">teacher</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="procedeTo.ipbtnclk('the','engbtn9-8',10)" id="engbtn9-8" style="display:inline-block;" class="allengbtns">the</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="procedeTo.ipbtnclk('the','engbtn9-9',10)" id="engbtn9-9" style="display:inline-block;" class="allengbtns">the</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="procedeTo.ipbtnclk('the','engbtn9-10',10)" id="engbtn9-10" style="display:inline-block;" class="allengbtns">the</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+             <br><br><br><br>
+       </div>
+       <div id="egbtn10" style="display:none" class="egbtns">
+             <button onclick="procedeTo.ipbtnclk('told','engbtn10-1',9)" id="engbtn10-1"  style="display:inline-block;" class="allengbtns">told</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="procedeTo.ipbtnclk('book','engbtn10-2',9)" id="engbtn10-2"  style="display:inline-block;" class="allengbtns">book</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="procedeTo.ipbtnclk('yesterday','engbtn10-3',9)" id="engbtn10-3"  style="display:inline-block;" class="allengbtns">yesterday</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="procedeTo.ipbtnclk('I','engbtn10-4',9)" id="engbtn10-4" style="display:inline-block;" class="allengbtns">I</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="procedeTo.ipbtnclk('her','engbtn10-5',9)" id="engbtn10-5" style="display:inline-block;" class="allengbtns">her</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="procedeTo.ipbtnclk('I','engbtn10-6',9)" id="engbtn10-6" style="display:inline-block;" class="allengbtns">I</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="procedeTo.ipbtnclk('that','engbtn10-7',9)" id="engbtn10-7" style="display:inline-block;"class="allengbtns">that</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="procedeTo.ipbtnclk('a','engbtn10-8',9)" id="engbtn10-8" style="display:inline-block;" class="allengbtns">a</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="procedeTo.ipbtnclk('bought','engbtn10-9',9)" id="engbtn10-9" style="display:inline-block;" class="allengbtns">bought</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <br><br><br><br>
+       </div>
+    </div>
+
+    <div id="hindi btns" style = "display :none" >
+         <div id="hibtn1" style="display:none" class="hibts">
+            <button onclick="procedeTo.ipbtnclk('गयें','hinbtn1-1',5)" class="allhinbtns" value="गयें" style="display:inline-block;" id="hinbtn1-1">गयें</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <button onclick="procedeTo.ipbtnclk('बाजार','hinbtn1-2',5)"  value="बाजार" style="display:inline-block;" id="hinbtn1-2" class="allhinbtns">बाजार</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <button onclick="procedeTo.ipbtnclk('श्याम','hinbtn1-3',5)"  value="श्याम" style="display:inline-block;" id="hinbtn1-3" class="allhinbtns">श्याम</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <button onclick="procedeTo.ipbtnclk('और','hinbtn1-4',5)" value="और" style="display:inline-block;" id="hinbtn1-4" class="allhinbtns">और</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <button onclick="procedeTo.ipbtnclk('राम','hinbtn1-5',5)" value="राम" style="display:inline-block;" id="hinbtn1-5" class="allhinbtns">राम</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            
+            <br><br><br><br>
+       </div>
+
+       	<div id="hibtn2" style="display:none" class="hibts">
+             <button onclick="procedeTo.ipbtnclk('भी','hinbtn2-1',5)" class="allhinbtns" id="hinbtn2-1" value="भी" style="display:inline-block;">भी</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="procedeTo.ipbtnclk('श्याम','hinbtn2-2',5)" class="allhinbtns" id="hinbtn2-2" value="श्याम" style="display:inline-block;">श्याम</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="procedeTo.ipbtnclk('और','hinbtn2-3',5)" class="allhinbtns" id="hinbtn2-3" value="और" style="display:inline-block;">और</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="procedeTo.ipbtnclk('सोया','hinbtn2-4',5)" class="allhinbtns" id="hinbtn2-4" value="सोया" style="display:inline-block;">सोया</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="procedeTo.ipbtnclk('राम','hinbtn2-5',5)" class="allhinbtns" id="hinbtn2-5" value="राम" style="display:inline-block;">राम</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <br><br><br><br>
+       </div>
+
+       	<div id="hibtn3" style="display:none" class="hibts">
+            <button onclick="procedeTo.ipbtnclk('है','hinbtn3-1',8)" class="allhinbtns" id="hinbtn3-1" value="है" style="display:inline-block;">है</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <button onclick="procedeTo.ipbtnclk('रहा','hinbtn3-2',8)" class="allhinbtns" id="hinbtn3-2" value="रहा" style="display:inline-block;">रहा</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <button onclick="procedeTo.ipbtnclk('सो','hinbtn3-3',8)" class="allhinbtns" id="hinbtn3-3" value="सो" style="display:inline-block;">सो</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <button onclick="procedeTo.ipbtnclk('राम','hinbtn3-4',8)" class="allhinbtns" id="hinbtn3-4" value="राम" style="display:inline-block;">राम</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <button onclick="procedeTo.ipbtnclk('कि','hinbtn3-5',8)" class="allhinbtns" id="hinbtn3-5" value="कि" style="display:inline-block;">कि</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <button onclick="procedeTo.ipbtnclk('बताया','hinbtn3-6',8)" class="allhinbtns" id="hinbtn3-6" value="बताया" style="display:inline-block;">बताया</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <button onclick="procedeTo.ipbtnclk('उसे','hinbtn3-7',8)" class="allhinbtns" id="hinbtn3-7" value="उसे" style="display:inline-block;">उसे</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <button onclick="procedeTo.ipbtnclk('मैंने','hinbtn3-8',8)" class="allhinbtns" id="hinbtn3-8" value="मैंने" style="display:inline-block;">मैंने</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <br><br><br><br>
+       </div>
+
+       	<div id="hibtn4" style="display:none" class="hibts">
+             <button onclick="procedeTo.ipbtnclk('सोया','hinbtn4-1',3)" class="allhinbtns" id="hinbtn4-1" value="सोया" style="display:inline-block;">सोया</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="procedeTo.ipbtnclk('खाकर','hinbtn4-2',3)" class="allhinbtns" id="hinbtn4-2" value="खाकर" style="display:inline-block;">खाकर</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="procedeTo.ipbtnclk('राम','hinbtn4-3',3)" class="allhinbtns" id="hinbtn4-3" value="राम" style="display:inline-block;">राम</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             
+             <br><br><br><br>
+       </div>
+
+       	<div id="hibtn5" style="display:none" class="hibts">
+             <button onclick="procedeTo.ipbtnclk('गया','hinbtn5-1',6)" class="allhinbtns" id="hinbtn5-1" value="गया" style="display:inline-block;">गया</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="procedeTo.ipbtnclk('सो','hinbtn5-2',6)" class="allhinbtns" id="hinbtn5-2" value="सो" style="display:inline-block;">सो</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="procedeTo.ipbtnclk('कुत्ता','hinbtn5-3',6)" class="allhinbtns" id="hinbtn5-3" value="कुत्ता" style="display:inline-block;">कुत्ता</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="procedeTo.ipbtnclk('मारकर','hinbtn5-4',6)" class="allhinbtns" id="hinbtn5-4" value="मारकर" style="display:inline-block;">मारकर</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="procedeTo.ipbtnclk('को','hinbtn5-5',6)" class="allhinbtns" id="hinbtn5-5" value="को" style="display:inline-block;">को</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="procedeTo.ipbtnclk('बिल्लियों','hinbtn5-6',6)" class="allhinbtns" id="hinbtn5-6" value="बिल्लियों" style="display:inline-block;">बिल्लियों</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <br><br><br><br>
+       </div>
+       <div id="hibtn6" style="display:none" class="hibts" >
+             <button onclick="procedeTo.ipbtnclk('वहाँ','hinbtn6-1',5)" class="allhinbtns" id="hinbtn6-1" value="वहाँ" style="display:inline-block;">वहाँ</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="procedeTo.ipbtnclk('है','hinbtn6-2',5)" class="allhinbtns" id="hinbtn6-2" value="है" style="display:inline-block;">है</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="procedeTo.ipbtnclk('किताब','hinbtn6-3',5)" class="allhinbtns" id="hinbtn6-3" value="किताब" style="display:inline-block;">किताब</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="procedeTo.ipbtnclk('लाल','hinbtn6-4',5)" class="allhinbtns" id="hinbtn6-4" value="लाल" style="display:inline-block;">लाल</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="procedeTo.ipbtnclk('एक','hinbtn6-5',5)" class="allhinbtns" id="hinbtn6-5" value="एक" style="display:inline-block;">एक</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <br><br><br><br>
+       </div>
+       <div id="hibtn7" style="display:none" class="hibts">
+             <button onclick="procedeTo.ipbtnclk('है','hinbtn7-1',6)" class="allhinbtns" id="hinbtn7-1" value="है" style="display:inline-block;">है</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="procedeTo.ipbtnclk('वहाँ','hinbtn7-2',6)" class="allhinbtns" id="hinbtn7-2" value="वहाँ" style="display:inline-block;">वहाँ</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="procedeTo.ipbtnclk('किताब','hinbtn7-3',6)" class="allhinbtns" id="hinbtn7-3" value="किताब" style="display:inline-block;">किताब</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="procedeTo.ipbtnclk('सी','hinbtn7-4',6)" class="allhinbtns" id="hinbtn7-4" value="सी" style="display:inline-block;">सी</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="procedeTo.ipbtnclk('बड़ी','hinbtn7-5',6)" class="allhinbtns" id="hinbtn7-5" value="बड़ी" style="display:inline-block;">बड़ी</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             <button onclick="procedeTo.ipbtnclk('एक','hinbtn7-6',6)" class="allhinbtns" id="hinbtn7-6" value="एक" style="display:inline-block;">एक</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+             
+             <br><br><br><br>
+       </div>
+
+    </div>
+</div>
+   <div style="color:#0000AA; display :none" id="s2"><b>Formed Sentence</b> (<i style="color:#0000FF">after selecting words</i>): </div>
+    
+    <P id="textdis" style="font-size:30px;display :none"><b></b></P>
+    <br>
+    <br>
+    <button onclick="procedeTo.reformclk()" style="display :none" id="reformbtn">Re-form the sentence</button>
+    <br>
+    <br>
+    <button onclick="" style="display :none" id="checkans">Check the correctness of this sentence</button>
+    <br>
+    <br>
+    <p id="right_wrong" style="text-align:center;font-size:30px;color:#FF0000;display :none">Wrong answer!!!<b style="font-size:30px">students</b></p>
+    <br>
+    <br>
+    <div id="get_hide" style="display :none"><button onclick="">Get Answers</button></div>
+    <div align="center" id="answer" style = "display :none"></div>
+
+
+   </div>
+
+
+       </div>
+        </div>
+
+</section>
+</body>
+<script type="text/javascript">
+	
+
+ var procedeTo = {
+
+ 	
+    numofwordsinsen:new Array(),
+
+ 	getSelectedLang: function(){
+		   var listOfLang = document.getElementById('selectLanguage');
+		   var selectedLang = listOfLang.options[listOfLang.selectedIndex].value;
+		   console.log(selectedLang);
+		   var engl1=["egbtn1","egbtn2","egbtn3","egbtn4","egbtn5","egbtn6","egbtn7","egbtn8","egbtn9","egbtn10"];
+		   var hil1=["hibtn1","hibtn2","hibtn3","hibtn4","hibtn5","hibtn6","hibtn7"];
+		   document.getElementById("hindi btns").style.display="none";
+           document.getElementById("english btns").style.display="none";
+           for(let i=0;i<10;i++){
+           document.getElementsByClassName("egbtns")[i].style.display="none";};
+           for(let i=0;i<7;i++){
+           document.getElementsByClassName("hibts")[i].style.display="none";};
+
+           /*document.getElementById("s2").style.display="none";
+           document.getElementById("textdis").innerHTML="";
+           document.getElementById("textdis").style.display="none";
+           document.getElementById('reformbtn').style.display="none";
+           for(let i=0;i<72;i++){
+           	document.getElementsByClassName("allengbtns")[i].style.display="inline-block";};
+           	 for(let i=0;i<38;i++){
+           	document.getElementsByClassName("allhinbtns")[i].style.display="inline-block";};*/
+           	this.reformclk()
+            
+		   if(selectedLang=="english"){
+			      document.getElementsByClassName("s1")[0].style.display="block";
+			      document.getElementsByClassName("s1")[1].style.display="block";
+			      document.getElementById("btnarea").style.display="block";
+			      document.getElementById("hindi btns").style.display="none";
+                  document.getElementById("english btns").style.display="block";
+                  document.getElementById(engl1[this.getRandengdiv(0,9)]).style.display="block";
+		           }
+		    else if(selectedLang=="hindi"){  
+		    	   document.getElementsByClassName("s1")[0].style.display="block";
+			       document.getElementsByClassName("s1")[1].style.display="block";
+			       document.getElementById("btnarea").style.display="block";
+			       document.getElementById("english btns").style.display="none";
+			       document.getElementById("hindi btns").style.display="block";
+			       document.getElementById(hil1[this.getRandengdiv(0,6)]).style.display="block";
+		           } 
+		           else{
+		           	alert('select a language');
+		           }
+
+		       },
+
+    getRandengdiv : function(min,max){
+        
+          return(Math.floor(Math.random() * (max - min) + min));
+        console.log(Math.floor(Math.random() * (max - min) + min));
+        
+
+           },
+    ipbtnclk : function(tx,id,number){
+
+    	document.getElementById('s2').style.display="block";
+    	document.getElementById('textdis').style.display="block";
+    
+    	document.getElementById('textdis').innerHTML += tx+" ";
+    	document.getElementById(id).style.display="none";
+    	document.getElementById('reformbtn').style.display="block";
+    	this.numofwordsinsen.push(number);
+    	if(this.numofwordsinsen.length==this.numofwordsinsen[0]){
+    		document.getElementById('checkans').style.display="block";
+
+    	};
+
+    	
+    	
+
+    	
+      },
+
+      reformclk : function(){
+         document.getElementById("s2").style.display="none";
+         document.getElementById("textdis").innerHTML="";
+         document.getElementById("textdis").style.display="none";
+        for(let i=0;i<72;i++){
+           	document.getElementsByClassName("allengbtns")[i].style.display="inline-block";};
+           for(let i=0;i<38;i++){
+           	document.getElementsByClassName("allhinbtns")[i].style.display="inline-block";};
+           	document.getElementById("reformbtn").style.display="none";
+           	this.numofwordsinsen = new Array();
+           	document.getElementById('checkans').style.display="none";
+
+
+
+
+      }
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+    } 
+     </script>
+</html>
