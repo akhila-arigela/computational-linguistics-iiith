@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>exp5</title>
+  
+  <script src="../Libraries/Snowball.min.js">
+    
+
+  </script>
+   <script src="../Libraries/require.js">
+    
+
+
+    /* require(['snowball'], function (snowball) {
+      var Snowball = require('snowball');
+      var stemmer = new Snowball('English');
+     });*/
+
+   </script>
+   <!--<script type="text/javascript">
+      var Stem = function(lng) {
+        var testStemmer = new Snowball(lng);
+        return function(word) {
+          testStemmer.setCurrent(word);
+          testStemmer.stem();
+          return testStemmer.getCurrent();
+        }
+      };
+      function println(lng, word){
+        document.getElementById("result").innerHTML = "<b>" + new Stem(lng)(word) + "</b>";
+      }
+    </script>!-->
+  
+</head>
+<body>
+<section id="experiment-article-section-4" style="display: block;">
+
+    <div class="heading" id="experiment-article-section-4-heading">
+          <h3>Experiment</h3>
+    </div>
+
+  <div class="content" id="experiment-article-section-4-content">
+	 <div id="TOKEN_TYPE">
+         <div id="selcont" align="center">
+
+            <select name="corp_opt" id="corp_opt"  onchange="oper.getrequiredoption()">
+                <option value="-1" >---Select a corpus---</option>"
+                <option value="*0">Corpus 1</option>
+                <option value="*1">Corpus 2</option>
+                <option value="*2">Corpus 3</option>
+            </select>
+
+          </div>
+        <div id="mainContent" align="center">
+          <br>
+          <div id="display1" style="display: none;"><p id="corp1">A mouse was having a very bad time. She could find no food at all. She looked here and there, but there was no food, and she grew very thin. At last the mouse found a basket, full of corn. There was a small hole in the basket, and she crept in. She could just get through the hole. Then she began to eat the corn. Being very hungry, she ate a great deal, and went on eating and eating. She had grown very fat before she felt that she had had enough. When the mouse tried to climb out of the basket, she could not. She was too fat to pass through the hole. "How shall I climb out?" said the mouse. "oh, how shall I climb out?" Just then a rat came along, and he heard the mouse. "Mouse," said the rat, "if you want to climb out of the basket, you must wait till you have grown as thin as you were when you went in.<p>
+           </div>
+       <br>
+   
+
+   <div id="display2" style="display:none;"><p id="corp2">A wolf carried off a lamb. The lamb said, " I know you are going to eat me, but before you eat me I would like to hear you play the flute. I have heard that you can play the flute better than anyone else, even the shepherd himself." The wolf was so pleased at this that he took out his flute and began to play. When he had done, the lamb insisted him to play once more and the wolf played again. The shepherd and the dogs heard the sound, and they came running up and fell on the wolf and the lamb was able to get back to the flock.</p>
+   </div>
+
+   <div id="display3" style="display: none;"><p id="corp3">A man had a little dog, and he was very fond of it. He would pat its head, and take it on his knee, and talk to it. Then he would give it little bits of food from his own plate. A donkey looked in at the window and saw the man and the dog. "Why does he not make a pet of me?" said the donkey. "It is not fair. I work hard, and the dog only wags its tail, and barks, and jumps on its master's knee. It is not fair." Then the donkey said to himself, "If I do what the dog does, he may make a pet of me." So the donkey ran into the room. It brayed as loudly as it could. It wagged its tail so hard that it knocked over a jar on the table. Then it tried to jump on to its master's knee. The master thought the donkey was mad, and he shouted, "Help! Help!" Men came running in with sticks, and they beat the donkey till it ran out of the house, and they drove it back to the field. "I only did what the dog does," said the donkey," and yet they make a pet of the dog, and they beat me with sticks. It is not fair.</p>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+  
+ <div id="disips" style="display:none;"> 
+  <center>
+  <p>Enter the number of tokens and types for the above corpus:</p>
+  <br>
+  
+  <table cellspacing="-2" cellpadding="4" border="1" style="text-align:center;border-collapse: collapse;">
+    <tbody>
+  	 <tr>
+  		<td style="border-collapse: collapse;">#tokens:</td>
+  		<td  style="border-collapse: collapse;">
+  			<input type="text" size="4" name="tokens" id="ans1" style="background-color:white;" value="">
+  		</td>
+  	</tr>
+  	<tr>
+  		<td style="border-collapse: collapse;">#types:</td>
+  		<td  style="border-collapse: collapse;">
+  			<input type="text" size="4" name="types" id="ans2" style="background-color:white;" value="">
+  		</td>
+  	</tr>
+   </tbody>
+   </table>
+   <br>
+   
+	<button  onclick="oper.subbtnck1()" id="sub_but1">Submit</button>
+  
+
+    </center>
+  </div>
+    
+
+   
+
+
+	<p id="res1" style="color:red; text-align:center;font-size: 30px;display: none;">Wrong Answer</p> 
+	<br>
+	<button onclick="oper.continuebtnclk()" style="display:none" id="continuebtn">Continue</button>
+
+    <div id="recalcudiv" align="center" style="display:none;">
+
+    	<p>
+         Now, consider all the tokens with the same 'root' word to be of the same type. Recalculate the number of types.</p>
+      <br>
+          <p style="margin:3px 0px;">#new types:</p>
+		  <input type="text" id="ans3" name="types_root2" size="4"  style="background-color: white;">
+		  <br>
+		  <br>
+		  <button id="sub_but2" onclick="oper.finalsubclick()">Submit</button>
+    </div>
+    <p id="res2" style="color:red; text-align:center;font-size: 30px;display: none;">Wrong Answer</p> 
+		
+	
+
+
+
+
+
+
+</div></div> 
+
+
+
+</div>
+        
+
+      </section>
+
+</body>
+<script type="text/javascript">
+
+	var oper={
+
+		selectecorpop :-1,
+
+    tokennum :0,
+
+    typenum :0,
+
+    netypenum: new Array(),
+
+		getrequiredoption: function(){
+			 var listOfcorps = document.getElementById('corp_opt');
+		     var selectedcorp = listOfcorps.options[listOfcorps.selectedIndex].value;
+		     this.resetvals();
+		     if(selectedcorp=="*0"){
+		     	document.getElementById('display1').style.display="block";
+		     	document.getElementById('display2').style.display="none";
+		     	document.getElementById('display3').style.display="none";
+		     	document.getElementById('disips').style.display="block";
+		     	this.selectecorpop=1;
+          var s=document.getElementById('corp1').innerHTML;
+          define(function (required){
+            var Snowball=required('snowball');
+          });
+           
+           /*var stemmer = new Snowball('English');
+           stemmer.setCurrent(s);
+           stemmer.stem();
+           console.log(stemmer.getCurrent());*/
+           /*var corp1 = document.getElementById('corp1').innerHTML;
+           corp1=corp1.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()"?]/g,"");
+           corp1=corp1.toLowerCase();
+           corp1=corp1.split(' ');
+           corp1=corp1.filter(corp1 => corp1.length>0);
+            //gives
+           console.log(corp1);*/
+           this.corpassages();
+
+          
+
+
+		     }
+		     else if(selectedcorp=="*1"){
+		     	document.getElementById('display2').style.display="block";
+		     	document.getElementById('display1').style.display="none";
+                document.getElementById('display3').style.display="none";
+                document.getElementById('disips').style.display="block";
+                this.selectecorpop=2;
+                this.corpassages();
+            
+		     }
+		     else if(selectedcorp=="*2"){
+                 document.getElementById('display3').style.display="block";
+                 document.getElementById('display1').style.display="none";
+                 document.getElementById('display2').style.display="none";
+                 document.getElementById('disips').style.display="block";
+                 this.selectecorpop=3;
+                 this.corpassages();
+		     }
+		     else{
+		     	alert('Select a corpus');
+		     }
+
+
+		},
+         
+        subbtnck1: function(){
+        	console.log(this.selectecorpop)
+        	console.log('entered here')
+        	var ipval1 =parseInt(document.getElementById("ans1").value);
+        	var ipval2=parseInt(document.getElementById("ans2").value);
+        	if (this.selectecorpop==1){
+        		if(ipval1==this.tokennum && ipval2==this.typenum){
+        			console.log('entered inside if')
+        			document.getElementById("ans1").style.backgroundColor="green";
+        			document.getElementById("ans2").style.backgroundColor="green";
+        			
+                    
+                    document.getElementById("res1").style.color="green";
+                    document.getElementById("res1").innerHTML="Right Answer";
+                    document.getElementById("res1").style.display="block";
+                    document.getElementById("continuebtn").style.display="block";
+
+        		    }
+        		else if(ipval1==this.tokennum){
+        			document.getElementById("ans1").style.backgroundColor="green";
+        			document.getElementById("ans2").style.backgroundColor="red";
+        			 document.getElementById("res1").style.color="red";
+                    document.getElementById("res1").innerHTML="Wrong Answer";
+                    document.getElementById("res1").style.display="block"; 
+                    document.getElementById("continuebtn").style.display="none";
+                      
+        		    }
+        		else if(ipval2==this.typenum){
+        			document.getElementById("ans1").style.backgroundColor="red";
+        			document.getElementById("ans2").style.backgroundColor="green";
+        			document.getElementById("res1").style.color="red";
+                    document.getElementById("res1").innerHTML="Wrong Answer";
+                    document.getElementById("res1").style.display="block"; 
+                    document.getElementById("continuebtn").style.display="none";
+        		    }
+        		else{
+        			document.getElementById("ans1").style.backgroundColor="red";
+        			document.getElementById("ans2").style.backgroundColor="red";
+        			document.getElementById("res1").style.color="red";
+                    document.getElementById("res1").innerHTML="Wrong Answer";
+                    document.getElementById("res1").style.display="block"; 
+                    document.getElementById("continuebtn").style.display="none";
+        		    }
+
+
+        	}
+        	else if(this.selectecorpop==2){
+        		if(ipval1==this.tokennum && ipval2==this.typenum){
+        			console.log('entered inside if')
+        			document.getElementById("ans1").style.backgroundColor="green";
+        			document.getElementById("ans2").style.backgroundColor="green";
+        			
+                    
+                    document.getElementById("res1").style.color="green";
+                    document.getElementById("res1").innerHTML="Right Answer";
+                    document.getElementById("res1").style.display="block";
+                     document.getElementById("continuebtn").style.display="block";
+
+        		    }
+        		else if(ipval1==this.tokennum){
+        			document.getElementById("ans1").style.backgroundColor="green";
+        			document.getElementById("ans2").style.backgroundColor="red";
+        			document.getElementById("res1").style.color="red";
+                    document.getElementById("res1").innerHTML="Wrong Answer";
+                    document.getElementById("res1").style.display="block";
+                    document.getElementById("continuebtn").style.display="none"; 
+                    
+                     
+        		    }
+        		else if(ipval2==this.typenum){
+        			document.getElementById("ans1").style.backgroundColor="red";
+        			document.getElementById("ans2").style.backgroundColor="green";
+        			document.getElementById("res1").style.color="red";
+                    document.getElementById("res1").innerHTML="Wrong Answer";
+                    document.getElementById("res1").style.display="block"; 
+                    document.getElementById("continuebtn").style.display="none";
+        		    }
+        		else{
+        			document.getElementById("ans1").style.backgroundColor="red";
+        			document.getElementById("ans2").style.backgroundColor="red";
+        			document.getElementById("res1").style.color="red";
+                    document.getElementById("res1").innerHTML="Wrong Answer";
+                    document.getElementById("res1").style.display="block";
+                    document.getElementById("continuebtn").style.display="none"; 
+        		    }
+
+
+        	}
+        	else{
+        		if(ipval1==this.tokennum && ipval2==this.typenum){
+        			console.log('entered inside if')
+        			document.getElementById("ans1").style.backgroundColor="green";
+        			document.getElementById("ans2").style.backgroundColor="green";
+        			
+                    
+                    document.getElementById("res1").style.color="green";
+                    document.getElementById("res1").innerHTML="Right Answer";
+                    document.getElementById("res1").style.display="block";
+                     document.getElementById("continuebtn").style.display="block";
+
+        		    }
+        		else if(ipval1==this.tokennum){
+        			document.getElementById("ans1").style.backgroundColor="green";
+        			document.getElementById("ans2").style.backgroundColor="red";
+        			document.getElementById("res1").style.color="red";
+                    document.getElementById("res1").innerHTML="Wrong Answer";
+                    document.getElementById("res1").style.display="block";
+                    document.getElementById("continuebtn").style.display="none";   
+        		    }
+        		else if(ipval2==this.typenum){
+        			document.getElementById("ans1").style.backgroundColor="red";
+        			document.getElementById("ans2").style.backgroundColor="green";
+        			document.getElementById("res1").style.color="red";
+                    document.getElementById("res1").innerHTML="Wrong Answer";
+                    document.getElementById("res1").style.display="block";
+                    document.getElementById("continuebtn").style.display="none"; 
+        		    }
+        		else{
+        			document.getElementById("ans1").style.backgroundColor="red";
+        			document.getElementById("ans2").style.backgroundColor="red";
+        			document.getElementById("res1").style.color="red";
+                    document.getElementById("res1").innerHTML="Wrong Answer";
+                    document.getElementById("res1").style.display="block";
+                    document.getElementById("continuebtn").style.display="none"; 
+        		    }
+
+
+        	}
+                 
+
+        },
+
+        resetvals: function(){
+        	document.getElementById("ans1").value="";
+            document.getElementById("ans2").value="";
+            document.getElementById("ans1").style.backgroundColor="white";
+        	document.getElementById("ans2").style.backgroundColor="white";
+        	document.getElementById("res1").style.display="none";
+        	document.getElementById("continuebtn").style.display="none";
+        	document.getElementById("recalcudiv").style.display="none";		
+            document.getElementById("sub_but1").style.display="block";
+            document.getElementById("ans3").value="";
+            document.getElementById("ans3").style.backgroundColor="white";
+            document.getElementById("res2").style.display="none";
+
+        },
+        continuebtnclk :function(){
+        	document.getElementById("continuebtn").style.display="none";
+        	document.getElementById("res1").style.display="none";
+        	document.getElementById("recalcudiv").style.display="block";
+        	document.getElementById("sub_but1").style.display="none";
+
+        },
+
+        corpassages :function(){
+          if(this.selectecorpop==1){
+           var corp1 = document.getElementById('corp1').innerHTML;
+           corp1=corp1.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()"?]/g,"");
+           corp1=corp1.toLowerCase();
+           corp1=corp1.split(' ');
+           corp1=corp1.filter(corp1 => corp1.length>0);
+            //gives types
+           console.log(corp1);
+           this.tokennum=corp1.length;
+         var uniquewords = [];
+         corp1.forEach((c) => {
+          if (!uniquewords.includes(c)) {
+               uniquewords.push(c);
+             }
+             });
+            console.log(uniquewords);
+            this.typenum=uniquewords.length;
+            var type2=[];
+            uniquewords.forEach((ele)=>{
+                define(function (required){
+                var Snowball=required('snowball');
+                });
+              var stemmer = new Snowball('English');
+              stemmer.setCurrent(ele);
+              stemmer.stem();
+              type2.push(stemmer.getCurrent());
+               
+            });
+             var uniquetype2 = [];
+           type2.forEach((c) => {
+            if (!uniquetype2.includes(c)) {
+               uniquetype2.push(c);
+             }
+             });
+           console.log(uniquetype2);
+           this.netypenum=uniquetype2.length;
+            
+
+          }
+           else if(this.selectecorpop==2){
+           var corp2 = document.getElementById('corp2').innerHTML;
+           corp2=corp2.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()"?]/g,"");
+           corp2=corp2.toLowerCase();
+           corp2=corp2.split(' ');
+           corp2=corp2.filter(corp2 => corp2.length>0);
+            //gives types
+           console.log(corp2);
+           this.tokennum=corp2.length;
+           var uniquewords = [];
+         corp2.forEach((c) => {
+          if (!uniquewords.includes(c)) {
+               uniquewords.push(c);
+             }
+             });
+            console.log(uniquewords);
+             this.typenum=uniquewords.length;
+             var type2=[];
+            uniquewords.forEach((ele)=>{
+                define(function (required){
+                var Snowball=required('snowball');
+                });
+              var stemmer = new Snowball('English');
+              stemmer.setCurrent(ele);
+              stemmer.stem();
+              type2.push(stemmer.getCurrent());
+               
+            });
+             var uniquetype2 = [];
+           type2.forEach((c) => {
+            if (!uniquetype2.includes(c)) {
+               uniquetype2.push(c);
+             }
+             });
+           console.log(uniquetype2);
+           this.netypenum=uniquetype2.length;
+           }
+           else{
+            var corp3 = document.getElementById('corp3').innerHTML;
+           corp3=corp3.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()"?]/g,"");
+           corp3=corp3.toLowerCase();
+           corp3=corp3.split(' ');
+           corp3=corp3.filter(corp3 => corp3.length>0);
+            console.log(corp3);
+            this.tokennum=corp3.length;
+            var uniquewords = [];
+            corp3.forEach((c) => {
+            if (!uniquewords.includes(c)) {
+               uniquewords.push(c);
+             }
+             });
+            console.log(uniquewords);
+            this.typenum=uniquewords.length;
+            var type2=[];
+            uniquewords.forEach((ele)=>{
+                define(function (required){
+                var Snowball=required('snowball');
+                });
+              var stemmer = new Snowball('English');
+              stemmer.setCurrent(ele);
+              stemmer.stem();
+              type2.push(stemmer.getCurrent());
+               
+            });
+             var uniquetype2 = [];
+           type2.forEach((c) => {
+            if (!uniquetype2.includes(c)) {
+               uniquetype2.push(c);
+             }
+             });
+           console.log(uniquetype2);
+           this.netypenum=uniquetype2.length;
+           }
+
+
+        },
+
+        finalsubclick :function(){
+          var y=document.getElementById('ans3').value;
+          if(y==this.netypenum){
+            document.getElementById("ans3").style.backgroundColor="green";
+            document.getElementById("res2").style.color="green";
+            document.getElementById("res2").innerHTML="Right Answer";
+            document.getElementById("res2").style.display="block";
+
+          }
+          else{
+            document.getElementById("ans3").style.backgroundColor="red";
+            document.getElementById("res2").style.color="red";
+            document.getElementById("res2").innerHTML="Wrong Answer";
+            document.getElementById("res2").style.display="block";
+
+          }
+        }
+
+
+
+
+
+
+
+
+
+	}
+
+</script>
+</html>
