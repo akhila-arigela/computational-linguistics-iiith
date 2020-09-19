@@ -1,0 +1,1627 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  
+  <title>unit6</title>
+  <script src="../Libraries/rita-full.min.js"></script>
+</head>
+<body>
+  <section id="experiment-article-section-4" style="display: block">
+        <div class="heading" id="experiment-article-section-4-heading">
+          Experiment
+        </div>
+
+<div class="content" id="experiment-article-section-4-content">
+         
+         <div id="mainContainer" align="center">
+         
+          <select name="lang_opt" id="lang_opt" onchange="partsofspeech.getselectedlangop()">
+            <option value="-1">---Select Language---</option>
+            <option value="0">English</option>
+            <option value="1">Hindi</option>
+          </select>
+          <br>
+          <br> 
+
+         <div id="sen_opt" align="center">
+            <div id="hinsenoptdiv" align="center" style="display: none">
+                <select name="sentence_opt" id="senselopt1" onchange="partsofspeech.getselsentab()">
+                <option value="-1" select="selected">---Select a sentence---</option>
+                <option value="0">राम ने सीता के लिए फल तोड़ा। </option>
+                <option value="1">छोटे बच्चे पाठशाला जल्दी आयेंगे। </option>
+                <option value="2">मेहनत का फल मीठा होता है। </option>
+                <option value="3">वाह! वह खूबसूरत है। </option>
+                <option value="4">पेड़ से पत्ते गिर गए। </option>
+                </select>
+            </div>
+            <div id="engsenoptdiv" align="center" style="display: none">
+                <select name="sentence_opt" id="senselopt0" onchange="partsofspeech.getselsentab()">
+                <option value="-1" select="selected">---Select a sentence---</option>
+                <option value="0">The child liked the chocolate. </option>
+                <option value="1">She was stopped by the bravest knight. </option>
+                <option value="2">Mary baked a cake for his birthday. </option>
+                <option value="3">She decorated the cake carefully. </option>
+                <option value="4">Mary wore a dress with polka dots. </option></select>
+            </div>
+         </div>
+
+
+<div id="display">
+
+   <style type="text/css">
+        table { border-collapse: collapse; }
+        td { border: solid grey 1px; 
+              padding: 15px;}
+        th{padding: 15px;color: red;}
+        td.none { border: none; }
+   </style>
+  <center>
+  <br>
+  
+        <div style="text-align:center;color:#0000FF;display: none;" id="heading1">
+          <i>Select the POS tag for corresponding words</i>
+          <br>
+          </div>
+          <br>
+          <div  id="engtabs">
+           <div class="engtabsen" style="display: none;" >
+          <table cellspacing="-2" cellpadding="4" border="1" style="text-align:center;height:25px;width:25px">
+             <input type="hidden" name="sentence_info" id="sentence_info" value="मेहनत/Noun का/Postposition फल/Noun मीठा/Adjective होता/Verb है/Verb">
+             <tbody>
+                <tr>
+                  <th>Lexicon</th>
+                  <th>POS</th>
+                  <th id="cor_head"></th>
+                  <th id="ans_head"></th>
+                </tr>
+
+
+                <tr>
+                  <td>The</td>
+                  <td>
+                    <select name="t" class="engtabdrop0" onchange="">
+                      <option value="Noun">Noun</option>
+                      <option value="Pronoun">Pronoun</option>
+                      <option value="Verb">Verb</option>
+                      <option value="Adjective">Adjective</option>
+                      <option value="Adverb">Adverb</option>
+                      <option value="Preposition">Preposition</option>
+                      <option value="Conjunction">Conjunction</option>
+                      <option value="Interjection">Interjection</option>
+                    </select>
+                  </td>
+                  <td id="correction0">
+                    <img src="http://cl-iiith.vlabs.ac.in/exp7/right.png" style="height:25px;width:25px;display: none;" alt="Wrong" class="engcorsyn0"> 
+                  </td>
+                  <td id="correct0"><p style="display: none;" class="engcorans0">Determiner</p></td>
+                </tr>
+
+
+                <tr>
+                  <td>child</td>
+                  <td>
+                    <select name="t" class="engtabdrop0" onchange="">
+                      <option value="Noun">Noun</option>
+                      <option value="Pronoun">Pronoun</option>
+                      <option value="Verb">Verb</option>
+                      <option value="Adjective">Adjective</option>
+                      <option value="Adverb">Adverb</option>
+                      <option value="Preposition">Preposition</option>
+                      <option value="Conjunction">Conjunction</option>
+                      <option value="Interjection">Interjection</option>
+                    </select>
+                  </td>
+                  <td id="correction1">
+                    <img src="http://cl-iiith.vlabs.ac.in/exp7/right.png" style="height:25px;width:25px;display: none;" alt="Wrong" class="engcorsyn0"> 
+                  </td>
+                  <td id="correct1"><p style="display: none;" class="engcorans0">Noun</p></td>
+                </tr>
+
+
+                <tr>
+                  <td>liked</td>
+                  <td>
+                    <select name="t" class="engtabdrop0" onchange="">
+                       <option value="Noun">Noun</option>
+                      <option value="Pronoun">Pronoun</option>
+                      <option value="Verb">Verb</option>
+                      <option value="Adjective">Adjective</option>
+                      <option value="Adverb">Adverb</option>
+                      <option value="Preposition">Preposition</option>
+                      <option value="Conjunction">Conjunction</option>
+                      <option value="Interjection">Interjection</option>
+                    </select>
+                  </td>
+                  <td id="correction2">
+                    <img src="http://cl-iiith.vlabs.ac.in/exp7/wrong.png" style="height:25px;width:25px;display: none;" alt="Right" class="engcorsyn0"> 
+                  </td>
+                  <td id="correct2"><p style="display: none;" class="engcorans0">Verb</p></td>
+                </tr>
+
+                <tr>
+                  <td>the</td>
+                  <td>
+                    <select name="t" class="engtabdrop0" onchange="">
+                       <option value="Noun">Noun</option>
+                      <option value="Pronoun">Pronoun</option>
+                      <option value="Verb">Verb</option>
+                      <option value="Adjective">Adjective</option>
+                      <option value="Adverb">Adverb</option>
+                      <option value="Preposition">Preposition</option>
+                      <option value="Conjunction">Conjunction</option>
+                      <option value="Interjection">Interjection</option>
+                    </select>
+                  </td>
+                  <td id="correction3">
+                    <img src="http://cl-iiith.vlabs.ac.in/exp7/wrong.png" style="height:25px;width:25px;display: none;" alt="Wrong" class="engcorsyn0"> 
+                  </td>
+                  <td id="correct3"><p style="display: none;" class="engcorans0">Determiner</p></td>
+                </tr>
+
+                <tr>
+                  <td>chocolate</td>
+                  <td>
+                    <select name="t" class="engtabdrop0" onchange="">
+                      <option value="Noun">Noun</option>
+                      <option value="Pronoun">Pronoun</option>
+                      <option value="Verb">Verb</option>
+                      <option value="Adjective">Adjective</option>
+                      <option value="Adverb">Adverb</option>
+                      <option value="Preposition">Preposition</option>
+                      <option value="Conjunction">Conjunction</option>
+                      <option value="Interjection">Interjection</option>
+                    </select>
+                  </td>
+                  <td id="correction4">
+                    <img src="http://cl-iiith.vlabs.ac.in/exp7/wrong.png" style="height:25px;width:25px;display: none;" alt="Wrong" class="engcorsyn0"> 
+                  </td>
+                  <td id="correct4"><p style="display: none;" class="engcorans0">Noun</p></td>
+                </tr>
+
+              </tbody>
+            </table> 
+            </div> 
+
+            <div class="engtabsen" style="display: none;">
+             <table cellspacing="-2" cellpadding="4" border="1" style="text-align:center;height:25px;width:25px">
+             <input type="hidden" name="sentence_info" id="sentence_info" value="मेहनत/Noun का/Postposition फल/Noun मीठा/Adjective होता/Verb है/Verb">
+             <tbody>
+                <tr>
+                  <th>Lexicon</th>
+                  <th>POS</th>
+                  <th id="cor_head"></th>
+                  <th id="ans_head"></th>
+                </tr>
+
+
+                <tr>
+                  <td>She</td>
+                  <td>
+                    <select name="t" class="engtabdrop1" onchange="">
+                      <option value="Noun">Noun</option>
+                      <option value="Pronoun">Pronoun</option>
+                      <option value="Verb">Verb</option>
+                      <option value="Adjective">Adjective</option>
+                      <option value="Adverb">Adverb</option>
+                      <option value="Preposition">Preposition</option>
+                      <option value="Conjunction">Conjunction</option>
+                      <option value="Interjection">Interjection</option>
+                    </select>
+                  </td>
+                  <td id="correction0">
+                    <img src="http://cl-iiith.vlabs.ac.in/exp7/wrong.png" style="height:25px;width:25px;display: none;" alt="Wrong" class="engcorsyn1"> 
+                  </td>
+                  <td id="correct0"><p style="display: none;" class="engcorans1">Pronoun</p></td>
+                </tr>
+
+
+                <tr>
+                  <td>was</td>
+                  <td>
+                    <select name="t" class="engtabdrop1" onchange="">
+                      <option value="Noun">Noun</option>
+                      <option value="Pronoun">Pronoun</option>
+                      <option value="Verb">Verb</option>
+                      <option value="Adjective">Adjective</option>
+                      <option value="Adverb">Adverb</option>
+                      <option value="Preposition">Preposition</option>
+                      <option value="Conjunction">Conjunction</option>
+                      <option value="Interjection">Interjection</option>
+                    </select>
+                  </td>
+                  <td id="correction1">
+                    <img src="http://cl-iiith.vlabs.ac.in/exp7/wrong.png" style="height:25px;width:25px;display: none;" alt="Wrong" class="engcorsyn1"> 
+                  </td>
+                  <td id="correct1"><p style="display: none;" class="engcorans1">Verb</p></td>
+                </tr>
+
+
+                <tr>
+                  <td>stopped</td>
+                  <td>
+                    <select name="t" class="engtabdrop1" onchanged="">
+                      <option value="Noun">Noun</option>
+                      <option value="Pronoun">Pronoun</option>
+                      <option value="Verb">Verb</option>
+                      <option value="Adjective">Adjective</option>
+                      <option value="Adverb">Adverb</option>
+                      <option value="Preposition">Preposition</option>
+                      <option value="Conjunction">Conjunction</option>
+                      <option value="Interjection">Interjection</option>
+                    </select>
+                  </td>
+                  <td id="correction2">
+                    <img src="http://cl-iiith.vlabs.ac.in/exp7/wrong.png" style="height:25px;width:25px;display: none;" alt="Right" class="engcorsyn1"> 
+                  </td>
+                  <td id="correct2"><p style="display: none;" class="engcorans1">Verb</p></td>
+                </tr>
+
+                 <tr>
+                  <td>by</td>
+                  <td>
+                    <select name="t" class="engtabdrop1" onchange="">
+                      <option value="Noun">Noun</option>
+                      <option value="Pronoun">Pronoun</option>
+                      <option value="Verb">Verb</option>
+                      <option value="Adjective">Adjective</option>
+                      <option value="Adverb">Adverb</option>
+                      <option value="Preposition">Preposition</option>
+                      <option value="Conjunction">Conjunction</option>
+                      <option value="Interjection">Interjection</option>
+                    </select>
+                  </td>
+                  <td id="correction3">
+                    <img src="http://cl-iiith.vlabs.ac.in/exp7/wrong.png" style="height:25px;width:25px;display: none;" alt="Right" class="engcorsyn1"> 
+                  </td>
+                  <td id="correct3"><p style="display: none;" class="engcorans1">Preposition</p></td>
+                </tr>
+
+                <tr>
+                  <td>the</td>
+                  <td>
+                    <select name="t" class="engtabdrop1" onchange="">
+                      <option value="Noun">Noun</option>
+                      <option value="Pronoun">Pronoun</option>
+                      <option value="Verb">Verb</option>
+                      <option value="Adjective">Adjective</option>
+                      <option value="Adverb">Adverb</option>
+                      <option value="Preposition">Preposition</option>
+                      <option value="Conjunction">Conjunction</option>
+                      <option value="Interjection">Interjection</option>
+                    </select>
+                  </td>
+                  <td id="correction4">
+                    <img src="http://cl-iiith.vlabs.ac.in/exp7/wrong.png" style="height:25px;width:25px;display: none;" alt="Wrong" class="engcorsyn1"> 
+                  </td>
+                  <td id="correct4"><p style="display: none;" class="engcorans1">Determiner</p></td>
+                </tr>
+
+                <tr>
+                  <td>bravest</td>
+                  <td>
+                    <select name="t" class="engtabdrop1" onchange="">
+                      <option value="Noun">Noun</option>
+                      <option value="Pronoun">Pronoun</option>
+                      <option value="Verb">Verb</option>
+                      <option value="Adjective">Adjective</option>
+                      <option value="Adverb">Adverb</option>
+                      <option value="Preposition">Preposition</option>
+                      <option value="Conjunction">Conjunction</option>
+                      <option value="Interjection">Interjection</option>
+                    </select>
+                  </td>
+                  <td id="correction5">
+                    <img src="http://cl-iiith.vlabs.ac.in/exp7/wrong.png" style="height:25px;width:25px;display: none;" alt="Wrong" class="engcorsyn1"> 
+                  </td>
+                  <td id="correct5"><p style="display: none;" class="engcorans1">Adjective</p></td>
+                </tr>
+
+                <tr>
+                  <td>knight</td>
+                  <td>
+                    <select name="t" class="engtabdrop1" onchange="">
+                      <option value="Noun">Noun</option>
+                      <option value="Pronoun">Pronoun</option>
+                      <option value="Verb">Verb</option>
+                      <option value="Adjective">Adjective</option>
+                      <option value="Adverb">Adverb</option>
+                      <option value="Preposition">Preposition</option>
+                      <option value="Conjunction">Conjunction</option>
+                      <option value="Interjection">Interjection</option>
+                    </select>
+                  </td>
+                  <td id="correction6">
+                    <img src="http://cl-iiith.vlabs.ac.in/exp7/wrong.png" style="height:25px;width:25px;display: none;" alt="Wrong" class="engcorsyn1"> 
+                  </td>
+                  <td id="correct6"><p style="display: none;" class="engcorans1">Noun</p></td>
+                </tr>
+              </tbody>
+            </table> 
+            </div>
+
+          <div class="engtabsen" style="display: none;">
+          <table cellspacing="-2" cellpadding="4" border="1" style="text-align:center;height:25px;width:25px">
+             <input type="hidden" name="sentence_info" id="sentence_info" value="मेहनत/Noun का/Postposition फल/Noun मीठा/Adjective होता/Verb है/Verb">
+             <tbody>
+                <tr>
+                  <th>Lexicon</th>
+                  <th>POS</th>
+                  <th id="cor_head"></th>
+                  <th id="ans_head"></th>
+                </tr>
+
+
+                <tr>
+                  <td>Mary</td>
+                  <td>
+                    <select name="t" class="engtabdrop2" onchange="">
+                      <option>Noun</option>
+                      <option>Pronoun</option>
+                      <option>Verb</option>
+                      <option>Adjective</option>
+                      <option>Adverb</option>
+                      <option>Preposition</option>
+                      <option>Conjunction</option>
+                      <option>Interjection</option>
+                    </select>
+                  </td>
+                  <td id="correction0">
+                    <img src="http://cl-iiith.vlabs.ac.in/exp7/right.png" style="height:25px;width:25px;display: none;" alt="Wrong" class="engcorsyn2"> 
+                  </td>
+                  <td id="correct0"><p style="display: none;" class="engcorans2">Noun</p></td>
+                </tr>
+
+
+                <tr>
+                  <td>baked</td>
+                  <td>
+                    <select name="t" class="engtabdrop2" onchange="">
+                      <option value="Noun">Noun</option>
+                      <option value="Pronoun">Pronoun</option>
+                      <option value="Verb">Verb</option>
+                      <option value="Adjective">Adjective</option>
+                      <option value="Adverb">Adverb</option>
+                      <option value="Preposition">Preposition</option>
+                      <option value="Conjunction">Conjunction</option>
+                      <option value="Interjection">Interjection</option>
+                    </select>
+                  </td>
+                  <td id="correction1">
+                    <img src="http://cl-iiith.vlabs.ac.in/exp7/wrong.png" style="height:25px;width:25px;display: none;" alt="Wrong" class="engcorsyn2"> 
+                  </td>
+                  <td id="correct1"><p style="display: none;" class="engcorans2">Verb</p></td>
+                </tr>
+
+
+                <tr>
+                  <td>a</td>
+                  <td>
+                    <select name="t" class="engtabdrop2" onchange="">
+                      <option value="Noun">Noun</option>
+                      <option value="Pronoun">Pronoun</option>
+                      <option value="Verb">Verb</option>
+                      <option value="Adjective">Adjective</option>
+                      <option value="Adverb">Adverb</option>
+                      <option value="Preposition">Preposition</option>
+                      <option value="Conjunction">Conjunction</option>
+                      <option value="Interjection">Interjection</option>
+                    </select>
+                  </td>
+                  <td id="correction2">
+                    <img src="http://cl-iiith.vlabs.ac.in/exp7/wrong.png" style="height:25px;width:25px;display: none;" alt="Right" class="engcorsyn2"> 
+                  </td>
+                  <td id="correct2"><p style="display: none;" class="engcorans2">Determiner</p></td>
+                </tr>
+
+                <tr>
+                  <td>cake</td>
+                  <td>
+                    <select name="t" class="engtabdrop2" onchange="">
+                      <option value="Noun">Noun</option>
+                      <option value="Pronoun">Pronoun</option>
+                      <option value="Verb">Verb</option>
+                      <option value="Adjective">Adjective</option>
+                      <option value="Adverb">Adverb</option>
+                      <option value="Preposition">Preposition</option>
+                      <option value="Conjunction">Conjunction</option>
+                      <option value="Interjection">Interjection</option>
+                    </select>
+                  </td>
+                  <td id="correction3">
+                    <img src="http://cl-iiith.vlabs.ac.in/exp7/wrong.png" style="height:25px;width:25px;display: none;" alt="Wrong" class="engcorsyn2"> 
+                  </td>
+                  <td id="correct3"><p style="display: none;" class="engcorans2">Noun</p></td>
+                </tr>
+
+                <tr>
+                  <td>for</td>
+                  <td>
+                    <select name="t" class="engtabdrop2" onchange="">
+                      <option value="Noun">Noun</option>
+                      <option value="Pronoun">Pronoun</option>
+                      <option value="Verb">Verb</option>
+                      <option value="Adjective">Adjective</option>
+                      <option value="Adverb">Adverb</option>
+                      <option value="Preposition">Preposition</option>
+                      <option value="Conjunction">Conjunction</option>
+                      <option value="Interjection">Interjection</option>
+                    </select>
+                  </td>
+                  <td id="correction4">
+                    <img src="http://cl-iiith.vlabs.ac.in/exp7/wrong.png" style="height:25px;width:25px;display: none;" alt="Wrong" class="engcorsyn2"> 
+                  </td>
+                  <td id="correct4"><p style="display: none;" class="engcorans2">Preposition</p></td>
+                </tr>
+
+                <tr>
+                  <td>his</td>
+                  <td>
+                    <select name="t" class="engtabdrop2" onchange="">
+                      <option value="Noun">Noun</option>
+                      <option value="Pronoun">Pronoun</option>
+                      <option value="Verb">Verb</option>
+                      <option value="Adjective">Adjective</option>
+                      <option value="Adverb">Adverb</option>
+                      <option value="Preposition">Preposition</option>
+                      <option value="Conjunction">Conjunction</option>
+                      <option value="Interjection">Interjection</option>
+                    </select>
+                  </td>
+                  <td id="correction5">
+                    <img src="http://cl-iiith.vlabs.ac.in/exp7/wrong.png" style="height:25px;width:25px;display: none;" alt="Wrong" class="engcorsyn2"> 
+                  </td>
+                  <td id="correct5"><p style="display: none;" class="engcorans2">Determiner</p></td>
+                </tr>
+
+                 <tr>
+                  <td>birthday</td>
+                  <td>
+                    <select name="t" class="engtabdrop2" onchange="">
+                      <option value="Noun">Noun</option>
+                      <option value="Pronoun">Pronoun</option>
+                      <option value="Verb">Verb</option>
+                      <option value="Adjective">Adjective</option>
+                      <option value="Adverb">Adverb</option>
+                      <option value="Preposition">Preposition</option>
+                      <option value="Conjunction">Conjunction</option>
+                      <option value="Interjection">Interjection</option>
+                    </select>
+                  </td>
+                  <td id="correction6">
+                    <img src="http://cl-iiith.vlabs.ac.in/exp7/wrong.png" style="height:25px;width:25px;display: none;" alt="Wrong" class="engcorsyn2"> 
+                  </td>
+                  <td id="correct6"><p style="display: none;" class="engcorans2">Noun</p></td>
+                </tr>
+              </tbody>
+            </table> 
+            </div>
+
+            <div class="engtabsen" style="display: none;">
+          <table cellspacing="-2" cellpadding="4" border="1" style="text-align:center;height:25px;width:25px">
+             <input type="hidden" name="sentence_info" id="sentence_info" value="मेहनत/Noun का/Postposition फल/Noun मीठा/Adjective होता/Verb है/Verb">
+             <tbody>
+                <tr>
+                  <th>Lexicon</th>
+                  <th>POS</th>
+                  <th id="cor_head"></th>
+                  <th id="ans_head"></th>
+                </tr>
+
+
+                <tr>
+                  <td>She</td>
+                  <td>
+                    <select name="t" class="engtabdrop3" onchange="">
+                       <option value="Noun">Noun</option>
+                      <option value="Pronoun">Pronoun</option>
+                      <option value="Verb">Verb</option>
+                      <option value="Adjective">Adjective</option>
+                      <option value="Adverb">Adverb</option>
+                      <option value="Preposition">Preposition</option>
+                      <option value="Conjunction">Conjunction</option>
+                      <option value="Interjection">Interjection</option>
+                    </select>
+                  </td>
+                  <td id="correction0">
+                    <img src="http://cl-iiith.vlabs.ac.in/exp7/right.png" style="height:25px;width:25px;display: none;" alt="Wrong" class="engcorsyn3"> 
+                  </td>
+                  <td id="correct0"><p style="display: none;" class="engcorans3">Pronoun</p></td>
+                </tr>
+
+
+                <tr>
+                  <td>decorates</td>
+                  <td>
+                    <select name="t" class="engtabdrop3" onchange="">
+                       <option value="Noun">Noun</option>
+                      <option value="Pronoun">Pronoun</option>
+                      <option value="Verb">Verb</option>
+                      <option value="Adjective">Adjective</option>
+                      <option value="Adverb">Adverb</option>
+                      <option value="Preposition">Preposition</option>
+                      <option value="Conjunction">Conjunction</option>
+                      <option value="Interjection">Interjection</option>
+                    </select>
+                  </td>
+                  <td id="correction1">
+                    <img src="http://cl-iiith.vlabs.ac.in/exp7/wrong.png" style="height:25px;width:25px;display: none;" alt="Wrong" class="engcorsyn3"> 
+                  </td>
+                  <td id="correct1"><p style="display: none;" class="engcorans3">Verb</p></td>
+                </tr>
+
+
+                <tr>
+                  <td>the</td>
+                  <td>
+                    <select name="t" class="engtabdrop3" onchange="">
+                       <option value="Noun">Noun</option>
+                      <option value="Pronoun">Pronoun</option>
+                      <option value="Verb">Verb</option>
+                      <option value="Adjective">Adjective</option>
+                      <option value="Adverb">Adverb</option>
+                      <option value="Preposition">Preposition</option>
+                      <option value="Conjunction">Conjunction</option>
+                      <option value="Interjection">Interjection</option>
+                    </select>
+                  </td>
+                  <td id="correction2">
+                    <img src="http://cl-iiith.vlabs.ac.in/exp7/wrong.png" style="height:25px;width:25px;display: none;" alt="Right" class="engcorsyn3"> 
+                  </td>
+                  <td id="correct2"><p style="display: none;" class="engcorans3">Determiner</p></td>
+                </tr>
+
+                <tr>
+                  <td>cake</td>
+                  <td>
+                    <select name="t" class="engtabdrop3" onchange="">
+                      <option value="Noun">Noun</option>
+                      <option value="Pronoun">Pronoun</option>
+                      <option value="Verb">Verb</option>
+                      <option value="Adjective">Adjective</option>
+                      <option value="Adverb">Adverb</option>
+                      <option value="Preposition">Preposition</option>
+                      <option value="Conjunction">Conjunction</option>
+                      <option value="Interjection">Interjection</option>
+                    </select>
+                  </td>
+                  <td id="correction3">
+                    <img src="http://cl-iiith.vlabs.ac.in/exp7/wrong.png" style="height:25px;width:25px;display: none;" alt="Wrong" class="engcorsyn3"> 
+                  </td>
+                  <td id="correct3"><p style="display: none;" class="engcorans3">Noun</p></td>
+                </tr>
+
+                <tr>
+                  <td>carefully</td>
+                  <td>
+                    <select name="t" class="engtabdrop3" onchange="">
+                       <option value="Noun">Noun</option>
+                      <option value="Pronoun">Pronoun</option>
+                      <option value="Verb">Verb</option>
+                      <option value="Adjective">Adjective</option>
+                      <option value="Adverb">Adverb</option>
+                      <option value="Preposition">Preposition</option>
+                      <option value="Conjunction">Conjunction</option>
+                      <option value="Interjection">Interjection</option>
+                    </select>
+                  </td>
+                  <td id="correction4">
+                    <img src="http://cl-iiith.vlabs.ac.in/exp7/wrong.png" style="height:25px;width:25px;display: none;" alt="Wrong" class="engcorsyn3"> 
+                  </td>
+                  <td id="correct4"><p style="display: none;" class="engcorans3">Adverb</p></td>
+                </tr>
+              </tbody>
+            </table> 
+            </div> 
+
+             <div class="engtabsen" style="display: none;">
+          <table cellspacing="-2" cellpadding="4" border="1" style="text-align:center;height:25px;width:25px">
+             <input type="hidden" name="sentence_info" id="sentence_info" value="मेहनत/Noun का/Postposition फल/Noun मीठा/Adjective होता/Verb है/Verb">
+             <tbody>
+                <tr>
+                  <th>Lexicon</th>
+                  <th>POS</th>
+                  <th id="cor_head"></th>
+                  <th id="ans_head"></th>
+                </tr>
+
+
+                <tr>
+                  <td>Mary</td>
+                  <td>
+                    <select name="t" class="engtabdrop4" onchange="">
+                       <option value="Noun">Noun</option>
+                      <option value="Pronoun">Pronoun</option>
+                      <option value="Verb">Verb</option>
+                      <option value="Adjective">Adjective</option>
+                      <option value="Adverb">Adverb</option>
+                      <option value="Preposition">Preposition</option>
+                      <option value="Conjunction">Conjunction</option>
+                      <option value="Interjection">Interjection</option>
+                    </select>
+                  </td>
+                  <td id="correction0">
+                    <img src="http://cl-iiith.vlabs.ac.in/exp7/wrong.png" style="height:25px;width:25px;display: none;" alt="Wrong" class="engcorsyn4"> 
+                  </td>
+                  <td id="correct0"><p style="display: none;" class="engcorans4">Noun</p></td>
+                </tr>
+
+
+                <tr>
+                  <td>wore</td>
+                  <td>
+                    <select name="t" class="engtabdrop4" onchange="">
+                       <option value="Noun">Noun</option>
+                      <option value="Pronoun">Pronoun</option>
+                      <option value="Verb">Verb</option>
+                      <option value="Adjective">Adjective</option>
+                      <option value="Adverb">Adverb</option>
+                      <option value="Preposition">Preposition</option>
+                      <option value="Conjunction">Conjunction</option>
+                      <option value="Interjection">Interjection</option>
+                    </select>
+                  </td>
+                  <td id="correction1">
+                    <img src="http://cl-iiith.vlabs.ac.in/exp7/wrong.png" style="height:25px;width:25px;display: none;" alt="Wrong" class="engcorsyn4"> 
+                  </td>
+                  <td id="correct1"><p style="display: none;" class="engcorans4">Verb</p></td>
+                </tr>
+
+
+                <tr>
+                  <td>a</td>
+                  <td>
+                    <select name="t" class="engtabdrop4" onchange="">
+                       <option value="Noun">Noun</option>
+                      <option value="Pronoun">Pronoun</option>
+                      <option value="Verb">Verb</option>
+                      <option value="Adjective">Adjective</option>
+                      <option value="Adverb">Adverb</option>
+                      <option value="Preposition">Preposition</option>
+                      <option value="Conjunction">Conjunction</option>
+                      <option value="Interjection">Interjection</option>
+                    </select>
+                  </td>
+                  <td id="correction2">
+                    <img src="http://cl-iiith.vlabs.ac.in/exp7/wrong.png" style="height:25px;width:25px;display: none;" alt="Right" class="engcorsyn4"> 
+                  </td>
+                  <td id="correct2"><p style="display: none;" class="engcorans4">Determiner</p></td>
+                </tr>
+
+                <tr>
+                  <td>dress</td>
+                  <td>
+                    <select name="t" class="engtabdrop4" onchange="">
+                       <option value="Noun">Noun</option>
+                      <option value="Pronoun">Pronoun</option>
+                      <option value="Verb">Verb</option>
+                      <option value="Adjective">Adjective</option>
+                      <option value="Adverb">Adverb</option>
+                      <option value="Preposition">Preposition</option>
+                      <option value="Conjunction">Conjunction</option>
+                      <option value="Interjection">Interjection</option>
+                    </select>
+                  </td>
+                  <td id="correction3">
+                    <img src="http://cl-iiith.vlabs.ac.in/exp7/wrong.png" style="height:25px;width:25px;display: none;" alt="Wrong" class="engcorsyn4"> 
+                  </td>
+                  <td id="correct3"><p style="display: none;" class="engcorans4">Noun</p></td>
+                </tr>
+
+                <tr>
+                  <td>with</td>
+                  <td>
+                    <select name="t" class="engtabdrop4" onchange="">
+                       <option value="Noun">Noun</option>
+                      <option value="Pronoun">Pronoun</option>
+                      <option value="Verb">Verb</option>
+                      <option value="Adjective">Adjective</option>
+                      <option value="Adverb">Adverb</option>
+                      <option value="Preposition">Preposition</option>
+                      <option value="Conjunction">Conjunction</option>
+                      <option value="Interjection">Interjection</option>
+                    </select>
+                  </td>
+                  <td id="correction4">
+                    <img src="http://cl-iiith.vlabs.ac.in/exp7/wrong.png" style="height:25px;width:25px;display: none;" alt="Wrong" class="engcorsyn4"> 
+                  </td>
+                  <td id="correct4"><p style="display: none;" class="engcorans4">Preposition</p></td>
+                </tr>
+
+                <tr>
+                  <td>polka</td>
+                  <td>
+                    <select name="t" class="engtabdrop4" onchange="">
+                       <option value="Noun">Noun</option>
+                      <option value="Pronoun">Pronoun</option>
+                      <option value="Verb">Verb</option>
+                      <option value="Adjective">Adjective</option>
+                      <option value="Adverb">Adverb</option>
+                      <option value="Preposition">Preposition</option>
+                      <option value="Conjunction">Conjunction</option>
+                      <option value="Interjection">Interjection</option>
+                    </select>
+                  </td>
+                  <td id="correction5">
+                    <img src="http://cl-iiith.vlabs.ac.in/exp7/wrong.png" style="height:25px;width:25px;display: none;" alt="Wrong" class="engcorsyn4"> 
+                  </td>
+                  <td id="correct5"><p style="display: none;" class="engcorans4">Noun</p></td>
+                </tr>
+
+                <tr>
+                  <td>dots</td>
+                  <td>
+                    <select name="t" class="engtabdrop4" onchange="">
+                       <option value="Noun">Noun</option>
+                      <option value="Pronoun">Pronoun</option>
+                      <option value="Verb">Verb</option>
+                      <option value="Adjective">Adjective</option>
+                      <option value="Adverb">Adverb</option>
+                      <option value="Preposition">Preposition</option>
+                      <option value="Conjunction">Conjunction</option>
+                      <option value="Interjection">Interjection</option>
+                    </select>
+                  </td>
+                  <td id="correction5">
+                    <img src="http://cl-iiith.vlabs.ac.in/exp7/wrong.png" style="height:25px;width:25px;display: none;" alt="Wrong" class="engcorsyn4"> 
+                  </td>
+                  <td id="correct5"><p style="display: none;" class="engcorans4">Noun</p></td>
+                </tr>
+              </tbody>
+            </table> 
+            </div> 
+      </div>    
+     <div  id="hintabs">
+           <div class="hintabsen" style="display: none;">
+          <table cellspacing="-2" cellpadding="4" border="1" style="text-align:center;height:25px;width:25px">
+             <input type="hidden" name="sentence_info" id="sentence_info" value="मेहनत/Noun का/Postposition फल/Noun मीठा/Adjective होता/Verb है/Verb">
+             <tbody>
+                <tr>
+                  <th>Lexicon</th>
+                  <th>POS</th>
+                  <th id="cor_head"></th>
+                  <th id="ans_head"></th>
+                </tr>
+
+
+                <tr>
+                  <td>राम</td>
+                  <td>
+                    <select name="t" class="hintabdrop0" onchange="">
+                       <option value="Noun">Noun</option>
+                      <option value="Pronoun">Pronoun</option>
+                      <option value="Verb">Verb</option>
+                      <option value="Adjective">Adjective</option>
+                      <option value="Adverb">Adverb</option>
+                      <option value="Postposition">Postposition</option>
+                      <option value="Conjunction">Conjunction</option>
+                      <option value="Interjection">Interjection</option>
+                    </select>
+                  </td>
+                  <td id="correction0">
+                    <img src="http://cl-iiith.vlabs.ac.in/exp7/wrong.png" style="height:25px;width:25px;display: none;" alt="Wrong" class="hincorsyn0"> 
+                  </td>
+                  <td id="correct0"><p style="display: none;" class="hincorans0">Noun</p></td>
+                </tr>
+
+
+                <tr>
+                  <td>ने</td>
+                  <td>
+                    <select name="t" class="hintabdrop0" onchange="">
+                       <option value="Noun">Noun</option>
+                      <option value="Pronoun">Pronoun</option>
+                      <option value="Verb">Verb</option>
+                      <option value="Adjective">Adjective</option>
+                      <option value="Adverb">Adverb</option>
+                      <option value="Postposition">Postposition</option>
+                      <option value="Conjunction">Conjunction</option>
+                      <option value="Interjection">Interjection</option>
+                    </select>
+                  </td>
+                  <td id="correction1">
+                    <img src="http://cl-iiith.vlabs.ac.in/exp7/wrong.png" style="height:25px;width:25px;display: none;" alt="Wrong" class="hincorsyn0"> 
+                  </td>
+                  <td id="correct1"><p style="display: none;" class="hincorans0">Postposition</p></td>
+                </tr>
+
+
+                <tr>
+                  <td>सीता</td>
+                  <td>
+                    <select name="t" class="hintabdrop0" onchange="">
+                       <option value="Noun">Noun</option>
+                      <option value="Pronoun">Pronoun</option>
+                      <option value="Verb">Verb</option>
+                      <option value="Adjective">Adjective</option>
+                      <option value="Adverb">Adverb</option>
+                      <option value="Postposition">Postposition</option>
+                      <option value="Conjunction">Conjunction</option>
+                      <option value="Interjection">Interjection</option>
+                    </select>
+                  </td>
+                  <td id="correction2">
+                    <img src="http://cl-iiith.vlabs.ac.in/exp7/wrong.png" style="height:25px;width:25px;display: none;" alt="Right" class="hincorsyn0"> 
+                  </td>
+                  <td id="correct2"><p style="display: none;" class="hincorans0">Noun</p></td>
+                </tr>
+
+                <tr>
+                  <td>के</td>
+                  <td>
+                    <select name="t" class="hintabdrop0" onchange="">
+                       <option value="Noun">Noun</option>
+                      <option value="Pronoun">Pronoun</option>
+                      <option value="Verb">Verb</option>
+                      <option value="Adjective">Adjective</option>
+                      <option value="Adverb">Adverb</option>
+                      <option value="Postposition">Postposition</option>
+                      <option value="Conjunction">Conjunction</option>
+                      <option value="Interjection">Interjection</option>
+                    </select>
+                  </td>
+                  <td id="correction3">
+                    <img src="http://cl-iiith.vlabs.ac.in/exp7/wrong.png" style="height:25px;width:25px;display: none;" alt="Wrong" class="hincorsyn0"> 
+                  </td>
+                  <td id="correct3"><p style="display: none;" class="hincorans0">Postposition</p></td>
+                </tr>
+
+                <tr>
+                  <td>लिए</td>
+                  <td>
+                    <select name="t" class="hintabdrop0" onchange="">
+                       <option value="Noun">Noun</option>
+                      <option value="Pronoun">Pronoun</option>
+                      <option value="Verb">Verb</option>
+                      <option value="Adjective">Adjective</option>
+                      <option value="Adverb">Adverb</option>
+                      <option value="Postposition">Postposition</option>
+                      <option value="Conjunction">Conjunction</option>
+                      <option value="Interjection">Interjection</option>
+                    </select>
+                  </td>
+                  <td id="correction4">
+                    <img src="http://cl-iiith.vlabs.ac.in/exp7/wrong.png" style="height:25px;width:25px;display: none;" alt="Wrong" class="hincorsyn0"> 
+                  </td>
+                  <td id="correct4"><p style="display: none;" class="hincorans0">Postposition</p></td>
+                </tr>
+
+                <tr>
+                  <td>फल</td>
+                  <td>
+                    <select name="t" class="hintabdrop0" onchange="">
+                       <option value="Noun">Noun</option>
+                      <option value="Pronoun">Pronoun</option>
+                      <option value="Verb">Verb</option>
+                      <option value="Adjective">Adjective</option>
+                      <option value="Adverb">Adverb</option>
+                      <option value="Postposition">Postposition</option>
+                      <option value="Conjunction">Conjunction</option>
+                      <option value="Interjection">Interjection</option>
+                    </select>
+                  </td>
+                  <td id="correction5">
+                    <img src="http://cl-iiith.vlabs.ac.in/exp7/wrong.png" style="height:25px;width:25px;display: none;" alt="Wrong" class="hincorsyn0"> 
+                  </td>
+                  <td id="correct5"><p style="display: none;" class="hincorans0">Noun</p></td>
+                </tr>
+
+                <tr>
+                  <td>तोड़ा</td>
+                  <td>
+                    <select name="t" class="hintabdrop0" onchange="">
+                       <option value="Noun">Noun</option>
+                      <option value="Pronoun">Pronoun</option>
+                      <option value="Verb">Verb</option>
+                      <option value="Adjective">Adjective</option>
+                      <option value="Adverb">Adverb</option>
+                      <option value="Postposition">Postposition</option>
+                      <option value="Conjunction">Conjunction</option>
+                      <option value="Interjection">Interjection</option>
+                    </select>
+                  </td>
+                  <td id="correction6">
+                    <img src="http://cl-iiith.vlabs.ac.in/exp7/wrong.png" style="height:25px;width:25px;display: none;" alt="Wrong" class="hincorsyn0"> 
+                  </td>
+                  <td id="correct6"><p style="display: none;" class="hincorans0">Verb</p></td>
+                </tr>
+              </tbody>
+            </table> 
+            </div> 
+
+            <div class="hintabsen" style="display: none;">
+          <table cellspacing="-2" cellpadding="4" border="1" style="text-align:center;height:25px;width:25px">
+             <input type="hidden" name="sentence_info" id="sentence_info" value="मेहनत/Noun का/Postposition फल/Noun मीठा/Adjective होता/Verb है/Verb">
+             <tbody>
+                <tr>
+                  <th>Lexicon</th>
+                  <th>POS</th>
+                  <th id="cor_head"></th>
+                  <th id="ans_head"></th>
+                </tr>
+
+
+                <tr>
+                  <td>छोटे</td>
+                  <td>
+                    <select name="t" class="hintabdrop1" onchange="">
+                       <option value="Noun">Noun</option>
+                      <option value="Pronoun">Pronoun</option>
+                      <option value="Verb">Verb</option>
+                      <option value="Adjective">Adjective</option>
+                      <option value="Adverb">Adverb</option>
+                      <option value="Postposition">Postposition</option>
+                      <option value="Conjunction">Conjunction</option>
+                      <option value="Interjection">Interjection</option>
+                    </select>
+                  </td>
+                  <td id="correction0">
+                    <img src="http://cl-iiith.vlabs.ac.in/exp7/wrong.png" style="height:25px;width:25px;display: none;" alt="Wrong" class="hincorsyn1"> 
+                  </td>
+                  <td id="correct0"><p style="display: none;" class="hincorans1">Adjective</p></td>
+                </tr>
+
+
+                <tr>
+                  <td>बच्चे</td>
+                  <td>
+                    <select name="t" class="hintabdrop1" onchange="">
+                       <option value="Noun">Noun</option>
+                      <option value="Pronoun">Pronoun</option>
+                      <option value="Verb">Verb</option>
+                      <option value="Adjective">Adjective</option>
+                      <option value="Adverb">Adverb</option>
+                      <option value="Postposition">Postposition</option>
+                      <option value="Conjunction">Conjunction</option>
+                      <option value="Interjection">Interjection</option>
+                    </select>
+                  </td>
+                  <td id="correction1">
+                    <img src="http://cl-iiith.vlabs.ac.in/exp7/wrong.png" style="height:25px;width:25px;display: none;" alt="Wrong" class="hincorsyn1"> 
+                  </td>
+                  <td id="correct1"><p style="display: none;" class="hincorans1">Noun</p></td>
+                </tr>
+
+
+                <tr>
+                  <td>पाठशाला</td>
+                  <td>
+                    <select name="t" class="hintabdrop1" onchange="">
+                       <option value="Noun">Noun</option>
+                      <option value="Pronoun">Pronoun</option>
+                      <option value="Verb">Verb</option>
+                      <option value="Adjective">Adjective</option>
+                      <option value="Adverb">Adverb</option>
+                      <option value="Postposition">Postposition</option>
+                      <option value="Conjunction">Conjunction</option>
+                      <option value="Interjection">Interjection</option>
+                    </select>
+                  </td>
+                  <td id="correction2">
+                    <img src="http://cl-iiith.vlabs.ac.in/exp7/wrong.png" style="height:25px;width:25px;display: none;" alt="Right" class="hincorsyn1"> 
+                  </td>
+                  <td id="correct2"><p style="display: none;" class="hincorans1">Noun</p></td>
+                </tr>
+
+                <tr>
+                  <td>जल्दी</td>
+                  <td>
+                    <select name="t" class="hintabdrop1" onchange="">
+                       <option value="Noun">Noun</option>
+                      <option value="Pronoun">Pronoun</option>
+                      <option value="Verb">Verb</option>
+                      <option value="Adjective">Adjective</option>
+                      <option value="Adverb">Adverb</option>
+                      <option value="Postposition">Postposition</option>
+                      <option value="Conjunction">Conjunction</option>
+                      <option value="Interjection">Interjection</option>
+                    </select>
+                  </td>
+                  <td id="correction3">
+                    <img src="http://cl-iiith.vlabs.ac.in/exp7/wrong.png" style="height:25px;width:25px;display: none;" alt="Wrong" class="hincorsyn1"> 
+                  </td>
+                  <td id="correct3"><p style="display: none;" class="hincorans1">Adverb</p></td>
+                </tr>
+
+                <tr>
+                  <td>आयेंगे</td>
+                  <td>
+                    <select name="t" class="hintabdrop1" onchange="">
+                       <option value="Noun">Noun</option>
+                      <option value="Pronoun">Pronoun</option>
+                      <option value="Verb">Verb</option>
+                      <option value="Adjective">Adjective</option>
+                      <option value="Adverb">Adverb</option>
+                      <option value="Postposition">Postposition</option>
+                      <option value="Conjunction">Conjunction</option>
+                      <option value="Interjection">Interjection</option>
+                    </select>
+                  </td>
+                  <td id="correction4">
+                    <img src="http://cl-iiith.vlabs.ac.in/exp7/wrong.png" style="height:25px;width:25px;display: none;" alt="Wrong" class="hincorsyn1"> 
+                  </td>
+                  <td id="correct4"><p style="display: none;" class="hincorans1">Verb</p></td>
+                </tr>
+
+                
+              </tbody>
+            </table> 
+            </div>
+          <div class="hintabsen" style="display: none;">
+          <table cellspacing="-2" cellpadding="4" border="1" style="text-align:center;height:25px;width:25px">
+             <input type="hidden" name="sentence_info" id="sentence_info" value="मेहनत/Noun का/Postposition फल/Noun मीठा/Adjective होता/Verb है/Verb">
+             <tbody>
+                <tr>
+                  <th>Lexicon</th>
+                  <th>POS</th>
+                  <th id="cor_head"></th>
+                  <th id="ans_head"></th>
+                </tr>
+
+
+                <tr>
+                  <td>मेहनत</td>
+                  <td>
+                    <select name="t" class="hintabdrop2" onchange="">
+                       <option value="Noun">Noun</option>
+                      <option value="Pronoun">Pronoun</option>
+                      <option value="Verb">Verb</option>
+                      <option value="Adjective">Adjective</option>
+                      <option value="Adverb">Adverb</option>
+                      <option value="Postposition">Postposition</option>
+                      <option value="Conjunction">Conjunction</option>
+                      <option value="Interjection">Interjection</option>
+                    </select>
+                  </td>
+                  <td id="correction0">
+                    <img src="http://cl-iiith.vlabs.ac.in/exp7/right.png" style="height:25px;width:25px;display: none;" alt="Wrong" class="hincorsyn2"> 
+                  </td>
+                  <td id="correct0"><p style="display: none;" class="hincorans2">Noun</p></td>
+                </tr>
+
+
+                <tr>
+                  <td>का</td>
+                  <td>
+                    <select name="t" class="hintabdrop2" onchange="">
+                       <option value="Noun">Noun</option>
+                      <option value="Pronoun">Pronoun</option>
+                      <option value="Verb">Verb</option>
+                      <option value="Adjective">Adjective</option>
+                      <option value="Adverb">Adverb</option>
+                      <option value="Postposition">Postposition</option>
+                      <option value="Conjunction">Conjunction</option>
+                      <option value="Interjection">Interjection</option>
+                    </select>
+                  </td>
+                  <td id="correction1">
+                    <img src="http://cl-iiith.vlabs.ac.in/exp7/wrong.png" style="height:25px;width:25px;display: none;" alt="Wrong" class="hincorsyn2"> 
+                  </td>
+                  <td id="correct1"><p style="display: none;" class="hincorans2">Postposition</p></td>
+                </tr>
+
+
+                <tr>
+                  <td>फल</td>
+                  <td>
+                    <select name="t" class="hintabdrop2" onchange="">
+                       <option value="Noun">Noun</option>
+                      <option value="Pronoun">Pronoun</option>
+                      <option value="Verb">Verb</option>
+                      <option value="Adjective">Adjective</option>
+                      <option value="Adverb">Adverb</option>
+                      <option value="Postposition">Postposition</option>
+                      <option value="Conjunction">Conjunction</option>
+                      <option value="Interjection">Interjection</option>
+                    </select>
+                  </td>
+                  <td id="correction2">
+                    <img src="http://cl-iiith.vlabs.ac.in/exp7/wrong.png" style="height:25px;width:25px;display: none;" alt="Right" class="hincorsyn2"> 
+                  </td>
+                  <td id="correct2"><p style="display: none;" class="hincorans2">Noun</p></td>
+                </tr>
+
+                <tr>
+                  <td>मीठा</td>
+                  <td>
+                    <select name="t" class="hintabdrop2" onchange="">
+                       <option value="Noun">Noun</option>
+                      <option value="Pronoun">Pronoun</option>
+                      <option value="Verb">Verb</option>
+                      <option value="Adjective">Adjective</option>
+                      <option value="Adverb">Adverb</option>
+                      <option value="Postposition">Postposition</option>
+                      <option value="Conjunction">Conjunction</option>
+                      <option value="Interjection">Interjection</option>
+                    </select>
+                  </td>
+                  <td id="correction3">
+                    <img src="http://cl-iiith.vlabs.ac.in/exp7/wrong.png" style="height:25px;width:25px;display:none;" alt="Wrong" class="hincorsyn2"> 
+                  </td>
+                  <td id="correct3"><p style="display: none;" class="hincorans2">Adjective</p></td>
+                </tr>
+
+                <tr>
+                  <td>होता</td>
+                  <td>
+                    <select name="t" class="hintabdrop2" onchange="">
+                       <option value="Noun">Noun</option>
+                      <option value="Pronoun">Pronoun</option>
+                      <option value="Verb">Verb</option>
+                      <option value="Adjective">Adjective</option>
+                      <option value="Adverb">Adverb</option>
+                      <option value="Postposition">Postposition</option>
+                      <option value="Conjunction">Conjunction</option>
+                      <option value="Interjection">Interjection</option>
+                    </select>
+                  </td>
+                  <td id="correction4">
+                    <img src="http://cl-iiith.vlabs.ac.in/exp7/wrong.png" style="height:25px;width:25px;display: none;" alt="Wrong" class="hincorsyn2"> 
+                  </td>
+                  <td id="correct4"><p style="display: none;" class="hincorans2">Verb</p></td>
+                </tr>
+
+                <tr>
+                  <td>है</td>
+                  <td>
+                    <select name="t" class="hintabdrop2" onchange="">
+                       <option value="Noun">Noun</option>
+                      <option value="Pronoun">Pronoun</option>
+                      <option value="Verb">Verb</option>
+                      <option value="Adjective">Adjective</option>
+                      <option value="Adverb">Adverb</option>
+                      <option value="Postposition">Postposition</option>
+                      <option value="Conjunction">Conjunction</option>
+                      <option value="Interjection">Interjection</option>
+                    </select>
+                  </td>
+                  <td id="correction5">
+                    <img src="http://cl-iiith.vlabs.ac.in/exp7/wrong.png" style="height:25px;width:25px;display: none;" alt="Wrong" class="hincorsyn2"> 
+                  </td>
+                  <td id="correct5"><p style="display: none;" class="hincorans2">Verb</p></td>
+                </tr>
+              </tbody>
+            </table> 
+            </div>
+
+          <div class="hintabsen" style="display: none;">
+          <table cellspacing="-2" cellpadding="4" border="1" style="text-align:center;height:25px;width:25px">
+             <input type="hidden" name="sentence_info" id="sentence_info" value="मेहनत/Noun का/Postposition फल/Noun मीठा/Adjective होता/Verb है/Verb">
+             <tbody>
+                <tr>
+                  <th>Lexicon</th>
+                  <th>POS</th>
+                  <th id="cor_head"></th>
+                  <th id="ans_head"></th>
+                </tr>
+
+
+                <tr>
+                  <td>वाह</td>
+                  <td>
+                    <select name="t" class="hintabdrop3" onchange="">
+                       <option value="Noun">Noun</option>
+                      <option value="Pronoun">Pronoun</option>
+                      <option value="Verb">Verb</option>
+                      <option value="Adjective">Adjective</option>
+                      <option value="Adverb">Adverb</option>
+                      <option value="Postposition">Postposition</option>
+                      <option value="Conjunction">Conjunction</option>
+                      <option value="Interjection">Interjection</option>
+                    </select>
+                  </td>
+                  <td id="correction0">
+                    <img src="http://cl-iiith.vlabs.ac.in/exp7/right.png" style="height:25px;width:25px;display: none;" alt="Wrong" class="hincorsyn3"> 
+                  </td>
+                  <td id="correct0"><p style="display: none;" class="hincorans3">Interjection</p></td>
+                </tr>
+
+
+                <tr>
+                  <td>वह</td>
+                  <td>
+                    <select name="t" class="hintabdrop3" onchange="">
+                       <option value="Noun">Noun</option>
+                      <option value="Pronoun">Pronoun</option>
+                      <option value="Verb">Verb</option>
+                      <option value="Adjective">Adjective</option>
+                      <option value="Adverb">Adverb</option>
+                      <option value="Postposition">Postposition</option>
+                      <option value="Conjunction">Conjunction</option>
+                      <option value="Interjection">Interjection</option>
+                    </select>
+                  </td>
+                  <td id="correction1">
+                    <img src="http://cl-iiith.vlabs.ac.in/exp7/wrong.png" style="height:25px;width:25px;display: none;" alt="Wrong" class="hincorsyn3"> 
+                  </td>
+                  <td id="correct1"><p style="display: none;" class="hincorans3">Pronoun</p></td>
+                </tr>
+
+
+                <tr>
+                  <td>खूबसूरत</td>
+                  <td>
+                    <select name="t" class="hintabdrop3" onchange="">
+                       <option value="Noun">Noun</option>
+                      <option value="Pronoun">Pronoun</option>
+                      <option value="Verb">Verb</option>
+                      <option value="Adjective">Adjective</option>
+                      <option value="Adverb">Adverb</option>
+                      <option value="Postposition">Postposition</option>
+                      <option value="Conjunction">Conjunction</option>
+                      <option value="Interjection">Interjection</option>
+                    </select>
+                  </td>
+                  <td id="correction2">
+                    <img src="http://cl-iiith.vlabs.ac.in/exp7/wrong.png" style="height:25px;width:25px;display: none;" alt="Right" class="hincorsyn3"> 
+                  </td>
+                  <td id="correct2"><p style="display: none;" class="hincorans3">Adjective</p></td>
+                </tr>
+
+                <tr>
+                  <td>है</td>
+                  <td>
+                    <select name="t" class="hintabdrop3" onchange="">
+                      <option value="Noun">Noun</option>
+                      <option value="Pronoun">Pronoun</option>
+                      <option value="Verb">Verb</option>
+                      <option value="Adjective">Adjective</option>
+                      <option value="Adverb">Adverb</option>
+                      <option value="Postposition">Postposition</option>
+                      <option value="Conjunction">Conjunction</option>
+                      <option value="Interjection">Interjection</option>
+                    </select>
+                  </td>
+                  <td id="correction3">
+                    <img src="http://cl-iiith.vlabs.ac.in/exp7/wrong.png" style="height:25px;width:25px;display: none;" alt="Wrong" class="hincorsyn3"> 
+                  </td>
+                  <td id="correct3"><p style="display: none;" class="hincorans3">Verb</p></td>
+                </tr>
+
+              </tbody>
+            </table> 
+            </div> 
+
+          <div class="hintabsen" style="display: none;" >
+          <table cellspacing="-2" cellpadding="4" border="1" style="text-align:center;height:25px;width:25px">
+             <input type="hidden" name="sentence_info" id="sentence_info" value="मेहनत/Noun का/Postposition फल/Noun मीठा/Adjective होता/Verb है/Verb">
+             <tbody>
+                <tr>
+                  <th>Lexicon</th>
+                  <th>POS</th>
+                  <th id="cor_head"></th>
+                  <th id="ans_head"></th>
+                </tr>
+
+
+                <tr>
+                  <td>पेड़</td>
+                  <td>
+                    <select name="t" class="hintabdrop4" onchange="">
+                       <option value="Noun">Noun</option>
+                      <option value="Pronoun">Pronoun</option>
+                      <option value="Verb">Verb</option>
+                      <option value="Adjective">Adjective</option>
+                      <option value="Adverb">Adverb</option>
+                      <option value="Postposition">Postposition</option>
+                      <option value="Conjunction">Conjunction</option>
+                      <option value="Interjection">Interjection</option>
+                    </select>
+                  </td>
+                  <td id="correction0">
+                    <img src="http://cl-iiith.vlabs.ac.in/exp7/right.png" style="height:25px;width:25px;display: none;" alt="Wrong" class="hincorsyn4"> 
+                  </td>
+                  <td id="correct0"><p style="display: none;" class="hincorans4">Noun</p></td>
+                </tr>
+
+
+                <tr>
+                  <td>से</td>
+                  <td>
+                    <select name="t" class="hintabdrop4" onchange="">
+                       <option value="Noun">Noun</option>
+                      <option value="Pronoun">Pronoun</option>
+                      <option value="Verb">Verb</option>
+                      <option value="Adjective">Adjective</option>
+                      <option value="Adverb">Adverb</option>
+                      <option value="Postposition">Postposition</option>
+                      <option value="Conjunction">Conjunction</option>
+                      <option value="Interjection">Interjection</option>
+                    </select>
+                  </td>
+                  <td class="hincorrection4">
+                    <img src="http://cl-iiith.vlabs.ac.in/exp7/wrong.png" style="height:25px;width:25px;display: none;" alt="Wrong" class="hincorsyn4"> 
+                  </td>
+                  <td><p style="display: none"; class="hincorans4">Postposition</p></td>
+                </tr>
+
+
+                <tr>
+                  <td>पत्ते</td>
+                  <td>
+                    <select name="t" class="hintabdrop4" onchange="">
+                       <option value="Noun">Noun</option>
+                      <option value="Pronoun">Pronoun</option>
+                      <option value="Verb">Verb</option>
+                      <option value="Adjective">Adjective</option>
+                      <option value="Adverb">Adverb</option>
+                      <option value="Postposition">Postposition</option>
+                      <option value="Conjunction">Conjunction</option>
+                      <option value="Interjection">Interjection</option>
+                    </select>
+                  </td>
+                  <td id="correction2">
+                    <img src="http://cl-iiith.vlabs.ac.in/exp7/wrong.png" style="height:25px;width:25px;display: none;" alt="Right" class="hincorsyn4"> 
+                  </td>
+                  <td id="correct2"><p style="display: none;" class="hincorans4">Noun</p></td>
+                </tr>
+
+                <tr>
+                  <td>गिर</td>
+                  <td>
+                    <select name="t" class="hintabdrop4" onchange="">
+                       <option value="Noun">Noun</option>
+                      <option value="Pronoun">Pronoun</option>
+                      <option value="Verb">Verb</option>
+                      <option value="Adjective">Adjective</option>
+                      <option value="Adverb">Adverb</option>
+                      <option value="Postposition">Postposition</option>
+                      <option value="Conjunction">Conjunction</option>
+                      <option value="Interjection">Interjection</option>
+                    </select>
+                  </td>
+                  <td id="correction3">
+                    <img src="http://cl-iiith.vlabs.ac.in/exp7/wrong.png" style="height:25px;width:25px;display: none;" alt="Wrong" class="hincorsyn4"> 
+                  </td>
+                  <td id="correct3"><p style="display: none;" class="hincorans4">Verb</p></td>
+                </tr>
+
+                <tr>
+                  <td>गए</td>
+                  <td>
+                    <select name="t" class="hintabdrop4" onchange="">
+                       <option value="Noun">Noun</option>
+                      <option value="Pronoun">Pronoun</option>
+                      <option value="Verb">Verb</option>
+                      <option value="Adjective">Adjective</option>
+                      <option value="Adverb">Adverb</option>
+                      <option value="Postposition">Postposition</option>
+                      <option value="Conjunction">Conjunction</option>
+                      <option value="Interjection">Interjection</option>
+                    </select>
+                  </td>
+                  <td id="correction4">
+                    <img src="http://cl-iiith.vlabs.ac.in/exp7/wrong.png" style="height:25px;width:25px;display: none;" alt="Wrong" class="hincorsyn4"> 
+                  </td>
+                  <td id="correct4"><p style="display: none;" class="hincorans4" >Verb</p></td>
+                </tr>
+
+              </tbody>
+            </table> 
+            </div> 
+      </div>    
+    <br>
+</center>
+
+  <button onclick="partsofspeech.subbtnclk()" style="display: none;" id="subbtn">Submit</button>
+  <br>
+  
+  <button style="display: none;" id="ans">Get Answer</button>
+
+
+</center>
+
+
+
+
+      </section>
+
+</body>
+<script type="text/javascript">
+  var partsofspeech={
+
+    selectedlangval  :0,
+
+    selectedsenval :-1,
+
+    engsen: ["The child liked the chocolate","She was stopped by the bravest knight","Mary baked a cake for his birthday","She decorated the cake carefully","Mary wore a dress with polka dots"],
+
+    hinsen :["Ram has sita of for fruit Broke","Small children school soon come","hardwork of fruit sweet happen is","wow! it beautiful is","trees from leaves fall went"] ,
+
+    engposshortcuts : new Array(),
+
+    hinposshortcuts : new Array(),
+
+    engdropdownclslst : ["engtabdrop0","engtabdrop1","engtabdrop2","engtabdrop3","engtabdrop4"],
+    
+    hindropdownclslst : ["hintabdrop0","hintabdrop1","hintabdrop2","hintabdrop3","hintabdrop4"],
+    
+    userinp : new Array(),
+
+    engcol3clslst :["engcorsyn0","engcorsyn1","engcorsyn2","engcorsyn3","engcorsyn4"],
+
+    hincol3clslst :["hincorsyn0","hincorsyn0","hincorsyn0","hincorsyn0","hincorsyn0"],
+
+    engcol4clslst : ["engcorans0","engcorans1","engcorans2","engcorans3","engcorans4"],
+
+    hincol4clslst : ["hincorans0","hincorans1","hincorans2","hincorans3","hincorans4"],
+
+
+
+
+
+
+    getselectedlangop : function(){
+       var listOfLang = document.getElementById('lang_opt');
+       var selectedLang = listOfLang.options[listOfLang.selectedIndex].value;
+       this.selectedlangval=parseInt(selectedLang);
+       console.log(this.selectedlangval);
+       document.getElementById('heading1').style.display="none";
+       document.getElementById('subbtn').style.display="none";
+       //this.reset();
+       if(selectedLang==0){
+         document.getElementById('hinsenoptdiv').style.display="none";
+         document.getElementById('engsenoptdiv').style.display="block";
+       }
+        else if(selectedLang==1){
+          document.getElementById('engsenoptdiv').style.display="none";
+          document.getElementById('hinsenoptdiv').style.display="block";
+        }
+        else{
+          alert('select a language')
+        }
+
+    },
+    reset : function(){
+    for(let i=0;i<5;i++){
+      var k = this.engposshortcuts.length;
+      var m = this.hinposshortcuts.length;
+      for(let j=0;j<k;j++){
+        var d = document.getElementsByClassName(this.engdropdownclslst[i])[j];
+         
+        d.selectedIndex="0";}
+      for(let j=0;j<m;j++){
+        var d = document.getElementsByClassName(this.hindropdownclslst[i])[j];
+         
+        d.selectedIndex="0";}
+
+      }
+
+
+      
+    },
+
+    getselsentab:function(){
+      
+       for(let i=0;i<5;i++){
+        document.getElementsByClassName('hintabsen')[i].style.display="none";
+        document.getElementsByClassName('engtabsen')[i].style.display="none";
+       };
+       document.getElementById('heading1').style.display="block";
+      document.getElementById('ans').style.display="none";
+
+      if(this.selectedlangval==0){
+        var listOfsen = document.getElementById('senselopt0');
+       var selectedsen = listOfsen.options[listOfsen.selectedIndex].value;
+       this.selectedsenval=parseInt(selectedsen);
+       console.log(this.selectedsenval);
+       console.log(this.engsen[this.selectedsenval]);
+       myRiString = new RiString(this.engsen[this.selectedsenval]);
+       this.engposshortcuts= myRiString.pos();
+        console.log(myRiString.pos()); 
+        document.getElementById('engtabs').style.display="block";
+        document.getElementById('hintabs').style.display="none";
+        document.getElementsByClassName('engtabsen')[this.selectedsenval].style.display="block";
+        console.log("selected the required eng sen");
+        document.getElementById('subbtn').style.display="block";
+        
+      }
+      else if(this.selectedlangval==1){
+        var listOfsen = document.getElementById('senselopt1');
+       var selectedsen = listOfsen.options[listOfsen.selectedIndex].value;
+       this.selectedsenval=parseInt(selectedsen);
+       console.log(this.selectedsenval);
+       console.log(this.hinsen[this.selectedsenval]);
+       myRiString = new RiString(this.hinsen[this.selectedsenval]); 
+       this.hinposshortcuts = myRiString.pos();
+        console.log(myRiString.pos()); 
+        document.getElementById('hintabs').style.display="block";
+        document.getElementById('engtabs').style.display="none";
+        document.getElementsByClassName('hintabsen')[this.selectedsenval].style.display="block";
+        document.getElementById('subbtn').style.display="block";
+        
+      }
+      else{
+        alert('select a sentence');
+      }
+      
+    },
+
+    subbtnclk: function(){
+      document.getElementById('ans').style.display="block";
+      this.userinp=[];
+      if(this.selectedlangval==0){
+          var k = this.engposshortcuts.length;
+         console.log(k);
+         var lst1=[];
+         for(let i=0;i<k;i++){
+         var listOfpos = document.getElementsByClassName(this.engdropdownclslst[this.selectedsenval])[i];
+         
+         var selectedopt = listOfpos.options[listOfpos.selectedIndex].value;
+            if(selectedopt==document.getElementsByClassName(this.engcol4clslst[this.selectedsenval])[i]){
+              document.getElementsByClassName(this.engcol3clslst[this.selectedsenval])[i].src="http://cl-iiith.vlabs.ac.in/exp7/right.png";
+              document.getElementsByClassName(this.engcol3clslst[this.selectedsenval])[i].style.display="block";
+            }
+            else{document.getElementsByClassName(this.engcol3clslst[this.selectedsenval])[i].src="http://cl-iiith.vlabs.ac.in/exp7/wrong.png";
+                 document.getElementsByClassName(this.engcol3clslst[this.selectedsenval])[i].style.display="block";
+                }
+
+
+             this.userinp.push(selectedopt);
+           }
+           console.log(this.userinp);
+
+           }
+           else{
+             var k = this.hinposshortcuts.length;
+             console.log(k);
+             var lst1=[];
+             for(let i=0;i<k;i++){
+             var listOfpos = document.getElementsByClassName(this.hindropdownclslst[this.selectedsenval])[i];
+         
+            var selectedopt = listOfpos.options[listOfpos.selectedIndex].value;
+            if(selectedopt==document.getElementsByClassName(this.hincol4clslst[this.selectedsenval])[i]){
+              document.getElementsByClassName(this.hincol3clslst[this.selectedsenval])[i].src="http://cl-iiith.vlabs.ac.in/exp7/right.png";
+               document.getElementsByClassName(this.hincol3clslst[this.selectedsenval])[i].style.display="block";
+            }
+            else{document.getElementsByClassName(this.hincol3clslst[this.selectedsenval])[i].src="http://cl-iiith.vlabs.ac.in/exp7/wrong.png";
+                  document.getElementsByClassName(this.hincol3clslst[this.selectedsenval])[i].style.display="block";
+                }
+
+
+             this.userinp.push(selectedopt);
+           }
+           console.log(this.userinp);
+
+
+
+           }
+
+
+
+
+    },
+    onchangeofdrop:function(){
+       var k = this.engposshortcuts.length ;
+       var lst1=[];
+       for(let i=0;i<k;i++){
+         var listOfpos = document.getElementsByClassName((this.engdropdownclslst[this.selectedsenval])[i]);
+         var selectedopt = listOfpos.options[listOfpos.selectedIndex].value;
+             lst1=lst1.push(selectedopt);
+           },
+           
+        
+
+       
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  }
+</script>
+</html>
